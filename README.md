@@ -1,6 +1,4 @@
-# digitalconstruction.github.io
-
-Digital Construction Ontologies
+Digital Construction Ontologies (digitalconstruction.github.io)
 ===
 
 A suite of ontologies for digital construction:
