@@ -1,21 +1,26 @@
 # digitalconstruction.github.io
 
-Digital Construction
+Digital Construction Ontologies
 ===
 
-Digital construction ontologies created in the DiCtion project.  DiCtion aims at the creation of shared situational awareness of construction projects. There are needs to represent information about the building objects (as well as information objects related to it), construction planning and workflows, construction organization, and monitoring data.
+A suite of ontologies for digital construction:
+* Entities (https://w3id.org/digitalconstruction/Entities) - Building objects, their groupings and related information objects
+* Processes (https://w3id.org/digitalconstruction/Processes) - Construction planning and workflows 
+* Agents (https://w3id.org/digitalconstruction/Agents) - Agents and their relations including persons, orgnizations and contracts 
+* Information (https://w3id.org/digitalconstruction/Information) - Information content entities relevant to construction
+* Contexts (https://w3id.org/digitalconstruction/Contexts) - The contexts of data, such as planned/actual, as-designed/as-built, and LODs
 
-The ontologies have been specified by Aalto University, VTT and VisuaLynk Ltd (Finland).
+Contributing projects:
+* Diction (https://www.aalto.fi/en/diction) - Development of shared situational awareness in construction projects.
+* BIM4EEB (https://www.bim4eeb-project.eu/) - BIM-based toolkit for fast renovation projects.
+
+Contributing organizations:
+* Aalto University
+* VTT
+* VisuaLynk
 
 Homepage:
 * https://w3id.org/digitalconstruction
-
-Vocabularies:
-* https://w3id.org/digitalconstruction/objects - Building objects, their groupings and related information objects
-* https://w3id.org/digitalconstruction/planning - Construction planning and workflows 
-* https://w3id.org/digitalconstruction/monitoring - Gathering of data about construction
-* https://w3id.org/digitalconstruction/organization - Actors and contracts 
-
 
 Contacts: 
 * Seppo Törmä <seppo.torma@visualynk.com>
