@@ -10,6 +10,10 @@
 table {
   border-collapse: collapse;
 }
+.plain {
+  border: 0px solid black;
+  background: none;
+}
 table, th, td {
   border: 1px solid black;
 }
@@ -28,26 +32,45 @@ td.narrow {
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
 <h1>Digital Construction Ontologies</h1>
 
-<p>Version: 0.2</p>
+<table class="plain">
+  <tr class="plain">
+    <td class="plain">
+      <p><b>Version</b></p>
+    </td>
+    <td class="plain">
+      <p>0.2</p>
+    </td>
+  </tr>
+  <tr class="plain">
+    <td class="plain">
+      <p><b>Status</b></p>
+    </td>
+    <td class="plain">
+      <p>Ontology Specification Draft</p>
+    </td>
+  </tr>
+</table>
+
+<hr>
 
 <h2>Purpose</h2>
 
 <p> Digital technologies are increasingly used in all stages of construction lifecycle.  Existing buildings and sites
-are mapped with scanning technologies, designs are created using the tools of building information modeling (BIM),
-design and management information is consumed at the site through mobile devices, the progress of construction is
-monitored with sensors (position, occupancy, activity state) and with scanning devices, and facility management is
+can be mapped with scanning technologies, designs created using the tools of building information modeling (BIM),
+design and management information consumed at the site through mobile devices, the progress of construction
+monitored with sensors (position, occupancy, activity state) and scanning devices, and facility management
 based on data gathered by building automation systems (BAS) and sensors. </p>
 
-<p> Digital construction means that large volumes of data will be produced at each lifecycle stage. It is a significant
-challenge to process and interrelate different pieces of data into a meaningful and accurate overall picture that is
-operationally useful and understandable to both human and automated agents. The purpose of the Digital Construction
-Ontology Suite is to address the semantic level of this challenge, by providing the essential concepts and properties
-faced in construction and renovation projects, thus paving the ways to the ultimate integration of information from
-different decentralized sources. </p>
+<p> Digital construction means that large volumes of heterogeneous data will be produced at each lifecycle stage. It is
+a significant challenge to process and interrelate different pieces of data into a meaningful and accurate overall
+picture that is operationally useful and understandable to both human and automated agents. The purpose of the Digital
+Construction Ontology Suite is to address the semantic level of this challenge, by providing the essential concepts and
+properties faced in construction and renovation projects, thus paving the ways to the ultimate integration of
+information from different decentralized sources. </p>
 
 <hr>
 
-<h2>Ontology suite</h2>
+<h2>Ontology suite (https://w3id.org/digitalconstruction/) </h2>
 
 <table>
   <tbody>
@@ -170,11 +193,136 @@ external ontologies (such as BIM models represented in ifcOWL or provenance repr
 
 <hr>
 
+<h2>Overview of the contents of the ontologies</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td><b>Scope</b>
+	<p>
+	Digital construction ontologies aim to capture the relevant objects and properties (relationships and
+	attributes) that can be referred to by people or systems during the management and execution of construction or
+	renovation projects. This includes physical and spatial entities, temporal regions, information contents,
+	agents, activities, and groupings of objects. </p>
+	
+      </td>
+      <td>
+	<img width="550" src="dico-scope.png">
+      </td>
+    </tr>
+    <tr>
+      <td><b>Common properties</b>
+	<p>All identifiable entities can be associated with multiple different identifiers and
+	classifications to enable the linking to other common construction information. Moreover, all objects can be
+	decomposed into parts.
+	Furthermore, information objects have the specific relation that
+	they are <em>about</em> some other objects and groups can contain any identifiable objects as their members. </p>
+      </td>
+      <td>
+	<img width="550" src="dico-common-properties.png">
+      </td>
+    </tr>
+    <tr>
+      <td><b>Activity flows</b>
+	<p>Activities are related to several different kinds of ingredients as identified in the field of
+	lean construction. The flows can be categorized to transformed objects, materials, equipments, labor crews, workspaces,
+	information objects, and environmental conditions, and there can be several flows in each categoy. Activities
+	require that the relevant ingredients are in a 
+	proper state before the execution (preconditions) or during it (such as resource reservations), and transform
+	the state of some of the ingredients as the result of execution. </p>
+
+	<p>
+	An essential goal is to be able to link
+	different entities to activities since the interest in construction management is in the progress of activities
+	but a lot of direct observations can be collected from other objects than activities (e.g., sensor data about
+	positions of objects or people, occupancy or locations); the linking will enable the derivation of activity
+	progress data from those observations. </p>
+	
+      </td>
+      <td>
+	<img width="550" src="dico-flows.png">
+      </td>
+    </tr>
+    <tr>
+      <td><b>Multi-context data</b>
+	<p>
+	Different aspects of construction - such as building objects,
+	resources, or activities - can be represented in multiple different contexts and often it is interesting to
+	compare the differences between those contexts. Building-related examples are as-designed and as-built contexts for BIM models,
+	or more comprehensively the contexts for different LODs (levels of detail/development). Activity-related contexts are
+	planned and actual data of project execution. </p>
+
+	<p>
+	Multi-context data is represented using the named graphs of RDF
+	datasets. It is an orthogonal mechanism that allows any objects to be associated with different properties - or
+	even different structures - in different contexts. It should be noted that the multi-context data allows the
+	recording of all differences between planned and executed activities. For instance, in addition to deviations in start and end
+	times, it is possible represent also actual activities that do not appear in the plans at all (so-called improvised
+	activities). 
+	</p>
+      </td>
+      <td>
+	<img width="550" src="dico-contexts.png">
+      </td>
+    </tr>
+    <tr>
+      <td><b>Variables and constraints</b>
+	<p>Much of the essential information about project management or construction
+	management can be represented in the form of constraints, and a significant periods of time during the project the
+	plans can have incomplete information about the exact values of some properties, such as start and end times of
+	tasks, resources assigned to tasks, locations of entities, and so on. To enable the interoperable sharing of
+	such common and crucial information, the ontologies include a possibility to associate a variable to any
+	property of an object and to represent constraints between variables. This representation is completely
+	orthogonal and can be used with properties defined in any existing ontologies.
+	</p>
+	<p>
+	In the example on the right the properties of an object (shipment1) as defined in the ontology are shown in 
+	blue color. Each of those properties is associated with a variable (in red color). The variables again are
+	associated with constraints (in green color) that limit their possible values. 
+	</p>
+      </td>
+      <td>
+	<img width="550" src="dico-variables.png">
+      </td>
+    </tr>
+    <tr>
+      <td><b>Integration with the broader Semantic Web</b>
+	<p>Digital Construction ontologies are designed to observe the
+	Linked Data principles, thus enabling the decentralized publication of construction data, essential in
+	construction projects.
+	</p>
+	<p>The ontologies use
+	or are aligened with well-known existing ontologies, as shown in the figure on the right (import relations are
+	shown as
+	solid and reference relations dashed lines). The Basic Formal Ontology (BFO) is imported as the
+	top-level ontology, the BIM models can be 
+	provided in ifcOWL or BOT, and concepts from other ontologies such as OWL-Time, PROV-O, FOAF, QUDT, SSN/SOSA, and Saref
+	are used as needed.
+	</p>
+	<p>Further alignment with related efforts such as Industrial Ontology Foundry will be
+	explored. </p>
+      </td>
+      <td>
+	<img  width="550" src="dico-ontology-relations.png">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
 <h2>Contributing projects </h2>
-<ul>
-  <li><p><a href="https://www.bim4eeb-project.eu/">BIM4EEB</a> - BIM-based toolkit for efficient renovation of residential buildings</p></li>
-  <li><p><a href="https://www.aalto.fi/en/diction">Diction</a> - Development of shared situational awareness in construction projects</p></li>
-</ul>
+
+<table>
+  <tr>
+    <td><center><a href="https://www.bim4eeb-project.eu/"><img height="200" src="bim4eeb-logo3.png">
+      <p>BIM4EEB - BIM-based toolkit for efficient renovation of residential buildings</p></a>
+      <p>(European Union's H2020 research and innovation programme, grant N. 820660)</p></center></td>
+     <td><center><a href="https://www.aalto.fi/en/diction"><img height="200" src="diction-logo.png">
+       <p>Diction - Development of shared situational awareness in construction projects</p></a>
+       <p>(Business Finland, Collaborative research project)</center></td>
+  </tr>
+</table>
 <hr>
 
 <h2>Contributing organizations </h2>
@@ -184,13 +332,6 @@ external ontologies (such as BIM models represented in ifcOWL or provenance repr
   <li><p><a href="https://tu-dresden.de/">TU Dresden</a></p></li>
   <li><p><a href="https://visualynk.com/#/">VisuaLynk</a></p></li>
   <li><p><a href="https://www.vttresearch.com/">VTT</a></p></li>
-</ul>
-<hr>
-
-
-<h2>Homepage</h2>
-<ul>
-  <li><a href="https://w3id.org/digitalconstruction">https://w3id.org/digitalconstruction</a></li>
 </ul>
 <hr>
 
@@ -212,5 +353,5 @@ external ontologies (such as BIM models represented in ifcOWL or provenance repr
     
 <hr>
 <address></address>
-<!-- hhmts start -->Last modified: Fri Feb 28 12:09:59 EET 2020 <!-- hhmts end -->
+<!-- hhmts start -->Last modified: Fri Mar  6 15:09:45 EET 2020 <!-- hhmts end -->
 </body> </html>
