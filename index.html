@@ -229,8 +229,9 @@ external ontologies (such as BIM models represented in ifcOWL or provenance repr
 	<ul>
 	  <li>All objects can be decomposed into <em>parts</em>.</li>
 	  <li>The parts of activities are called <em>subactivities</em>.</li>
-	  <li>Information objects are <em>about</em> other identifiable objects.</li>
+	  <li>Information entities are <em>about</em> other identifiable objects.</li>
 	  <li>Groups can contain any identifiable objects as their <em>members</em>.</li>
+	  <li>Agents can own <em>assets</em>.</li>
 	</ul>
       </td>
       <td>
@@ -242,10 +243,11 @@ external ontologies (such as BIM models represented in ifcOWL or provenance repr
 	<p>Activities are related to several different kinds of ingredients (often called flows) that have been studied
 	and identified in the field of
 	lean construction. The flows can be classified into transformed objects, material batches, equipment, labor crews, workspaces,
-	information objects, and environmental conditions, and each activity can have several flows in each of these categories. Activities
-	require that the relevant ingredients are in a 
-	proper state before the execution (preconditions) or during it (such as resource reservations). Moreover, activities transform
-	the state of some of the ingredients as the result of their execution (effects). </p>
+	information objects, and environmental conditions, and each activity can have several flows in each of these
+	categories. To be executable an activity requires that its ingredients are in a 
+	proper state before the execution (preconditions) or during it (e.g., resource reservations). Moreover, the
+	activity transforms the state of some of the ingredients as the result of its execution (effects) - this being
+	the purpose of executing the activity in the first place. </p>
 
 	<p>
 	An essential goal is to be able to link
@@ -369,5 +371,5 @@ external ontologies (such as BIM models represented in ifcOWL or provenance repr
     
 <hr>
 <address></address>
-<!-- hhmts start -->Last modified: Fri Mar  6 17:02:26 EET 2020 <!-- hhmts end -->
+<!-- hhmts start -->Last modified: Mon Mar  9 17:43:29 EET 2020 <!-- hhmts end -->
 </body> </html>
