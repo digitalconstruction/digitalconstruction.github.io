@@ -13,10 +13,11 @@ table {
 .plain {
   border: none;
   background: none;
-  margin-left: 0px;
+  margin-left: 0em;
   padding-left: 0px;
   text-align: left;  
 }
+div.head table.plain { margin-left: 0em; }
 table, th, td {
   border: 1px solid black;
 }
@@ -24,16 +25,23 @@ td.narrow {
   font-size: small;
   font-stretch: ultra-condensed;
 }
+body {
+  background-image: url('dtf.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 </style>
 
-<title>Digital Construction Ontologies</title>
+<title>DICO - Digital Construction Ontologies</title>
 </head>
 
 <body>
 <div class="container">
 <div class="head">
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
-<h1>Digital Construction Ontologies</h1>
+
+<h1>DICO - Digital Construction Ontologies</h1>
 
 <table class="plain">
   <tr class="plain">
@@ -41,7 +49,7 @@ td.narrow {
       <p><b>Version</b></p>
     </td>
     <td class="plain">
-      <p>0.2</p>
+      <p>0.3 (BFO ISO compliant)</p>
     </td>
   </tr>
   <tr class="plain">
@@ -58,19 +66,30 @@ td.narrow {
 
 <h2>Purpose</h2>
 
-<p> Digital technologies are increasingly used in all stages of construction lifecycle.  Existing buildings and sites
-can be mapped with scanning technologies, designs created using the tools of building information modeling (BIM),
-design and management information consumed at the site through mobile devices, the progress of construction
-monitored with sensors (position, occupancy, activity state) and scanning devices, and facility management
-based on data gathered by building automation systems (BAS) and sensors. </p>
+<p> Digital technologies are increasingly used in all stages of construction lifecycle.  Existing buildings and sites are mapped with
+scanning technologies, designs are created using the tools of building information modeling (BIM), design and management information is
+consumed at the site through mobile devices, the progress of construction is monitored with sensors (position, occupancy, activity state)
+and scanning devices, and facility management is based on data gathered by building automation systems (BAS) and sensors. While the numerous
+point solutions can mean great advances for specific tasks, the development of overall productivity depends also on what happens between the
+tasks: how the information produced in one task can be utilized by other tasks. This requires agreements and shared understanding at
+technical, syntactic, and semantic levels of interoperability. </p>
 
-<p> Digital construction means that large volumes of heterogeneous data will be produced at each lifecycle stage. It is
-a significant challenge to process and interrelate different pieces of data into a meaningful and accurate overall
-picture that is operationally useful and understandable to both human and automated agents. The purpose of the Digital
-Construction Ontology Suite is to address the semantic level of this challenge, by providing the essential concepts and
-properties faced in construction and renovation projects, thus paving the ways to the ultimate integration of
-information from different decentralized sources. </p>
+<p> In digital construction large volumes of heterogeneous data is produced at each lifecycle stage. It is a significant challenge to
+process and interrelate different pieces of data into a meaningful and accurate overall picture that is operationally useful and
+understandable to both human and automated agents. The purpose of the Digital Construction Ontology Suite is to address the semantic level
+of this challenge, by providing the essential concepts and properties of construction and renovation projects, thus paving the way to the
+ultimate integration of information from different decentralized sources over construction lifecycle. </p>
 
+<table>
+  <tr><td>
+    <b>Note</b>: The DICO version 0.3 has been refactored to comply with the new version of BFO specified in the ISO/IEC
+  21838-2 standard, finally approved in 2020-03. While most of the classes of BFO have remained same as in its previous version, there is a
+  large number of new relationships. The DICO v0.3 attempts to utilize those relationships as well as possible which has
+  resulted in a number of changes especially concerning composite entities and activity-flow relations. Also, to make
+  DICO easier to use by applications, a uniform naming
+  of instantiated classes and related properties was provided by defining equivalent terms for many BFO terms. 
+  </td></tr>
+</table>
 <hr>
 
 <h2>Ontology suite (https://w3id.org/digitalconstruction/) </h2>
@@ -79,47 +98,58 @@ information from different decentralized sources. </p>
   <tbody>
     <tr><td><b>Entities</b></td>
     <td class="narrow"><a href="https://w3id.org/digitalconstruction/Entities">https://w3id.org/digitalconstruction/Entities</a></td>
+    <td><tt>dice:</tt></td>
     <td>Identifiable entities with classifications, breakdowns and groupings</td></tr>
   
     <tr><td><b>Processes</b></td>
     <td class="narrow"><a href="https://w3id.org/digitalconstruction/Processes">https://w3id.org/digitalconstruction/Processes</a></td>
+    <td><tt>dicp:</tt></td>
     <td>Activities, capabilities, constraints and variables </td></tr>
     
     <tr><td><b>Agents</b></td>
     <td class="narrow"><a href="https://w3id.org/digitalconstruction/Agents">https://w3id.org/digitalconstruction/Agents</a></td>
+    <td><tt>dica:</tt></td>
     <td>Actors and stakeholders, and their relations and contracts</td></tr>
     
     <tr><td><b>Information</b></td>
     <td class="narrow"><a href="https://w3id.org/digitalconstruction/Information">https://w3id.org/digitalconstruction/Information</a></td>
+    <td><tt>dici:</tt></td>
     <td>Information content entities including designs, plans, events, and issues </td></tr>
 
     <tr><td><b>Contexts</b></td>
     <td class="narrow"><a href="https://w3id.org/digitalconstruction/Contexts">https://w3id.org/digitalconstruction/Contexts</a></td>
+    <td><tt>dicc:</tt></td>
     <td>Multi-contexts data: planned/actual, as-designed/as-built, levels of detail </td></tr>
 
     <tr><td><b>Variabless</b></td>
     <td class="narrow"><a href="https://w3id.org/digitalconstruction/Variables">https://w3id.org/digitalconstruction/Variables</a></td>
+    <td><tt>dicv:</tt></td>
     <td>Variables and constraints to support the representation of incomplete plans and
     management of changes </td></tr>
 
     <tr><td><b>Occupant Behavior</b></td>
     <td class="narrow"><a href="https://w3id.org/digitalconstruction/OccupantBehavior">https://w3id.org/digitalconstruction/OccupantBehavior</a></td>
+    <td><tt>dicob:</tt></td>
     <td>Occupant behavior and comfort </td></tr>
 
     <tr><td><b>Indoor Air Quality</b></td>
     <td class="narrow"><a href="https://w3id.org/digitalconstruction/IndoorAirQuality">https://w3id.org/digitalconstruction/IndoorAirQuality</a></td>
+    <td><tt>diciaq:</tt></td>
     <td>Indoor air quality</td></tr>
 
     <tr><td><b>Building Acoustics</b></td>
     <td class="narrow"><a href="https://w3id.org/digitalconstruction/BuildingAcoustics">https://w3id.org/digitalconstruction/BuildingAcoustics</a></td>
+    <td><tt>dicba:</tt></td>
     <td>Building acoustics</td></tr>
 
     <tr><td><b>Energy Systems</b></td>
     <td class="narrow"><a href="https://w3id.org/digitalconstruction/EnergySystems">https://w3id.org/digitalconstruction/EnergySystems</a></td>
+    <td><tt>dices:</tt></td>
     <td>Energy systems of buildings</td></tr>
 
     <tr><td><b>Building Materials</b></td>
     <td class="narrow"><a href="https://w3id.org/digitalconstruction/BuildingMaterials">https://w3id.org/digitalconstruction/BuildingMaterials</a></td>
+    <td><tt>dicbm:</tt></td>
     <td>Building materials</td></tr>
 
   </tbody>
@@ -137,8 +167,9 @@ external ontologies (such as BIM models represented in ifcOWL or provenance repr
 <table>
   <tbody>
     <tr><td><b>BFO</b></td>
-    <td><a href="https://github.com/bfo-ontology/BFO/wiki">Basic Formal Ontology</a></td>
-    <td class="narrow"><a href="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl">http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl</a></td>
+    <td><a href="https://basic-formal-ontology.org/">Basic Formal Ontology </a> (<a href="https://www.iso.org/standard/74572.html">ISO/IEC 21838-2</a>)</td>
+    <td class="narrow"><a
+  href="https://buffalo.app.box.com/v/bfo-iso-owl-cl/">https://buffalo.app.box.com/v/bfo-iso-owl-cl (file: owl/bfo-2020-owl)</a></td>
     <td>Fundamental categories</td></tr>
   
     <tr><td><b>ifcOWL</b></td>
@@ -196,137 +227,131 @@ external ontologies (such as BIM models represented in ifcOWL or provenance repr
 
 <hr>
 
-<h2>Overview of the contents of the ontologies</h2>
+<h2>Contents of the ontologies</h2>
 
-<table>
-  <tbody>
-    <tr>
-      <td><b>Scope</b>
-	<p>
-	Digital construction ontologies aim to capture the relevant objects and properties (relationships and
-	attributes) that can be referred to by people or systems during the management and execution of construction or
-	renovation projects. This includes physical and spatial entities, temporal regions, information contents,
-	agents, activities, and groupings of objects. </p>
-	<p>
-	The primary aim in Digital Construction Ontologies is to define the upper-level concepts (such as those shown
-	in boxes on the right) while providing the possibility to create additional ontologies that extend those
-	definitions with additional more specific concepts (for instance, concepts like those shown outside of boxes on
-	the right).  
-	</p>
-	
-      </td>
-      <td>
-	<img width="550" src="dico-scope.png">
-      </td>
-    </tr>
-    <tr>
-      <td><b>Common properties</b>
-	<p>All identifiable entities can be associated with multiple different <em>identifiers</em> and
-	<em>classifications</em> to facilitate the linking to other construction information, both at the instance
-	level and at the category level.</p>
-	
-	<p>In addition, there are some important other relations:</p>
-	<ul>
-	  <li>All objects can be decomposed into <em>parts</em>.</li>
-	  <li>The parts of activities are called <em>subactivities</em>.</li>
-	  <li>Information entities are <em>about</em> other identifiable objects.</li>
-	  <li>Groups can contain any identifiable objects as their <em>members</em>.</li>
-	  <li>Agents can own <em>assets</em>.</li>
-	  <li>Space occupying entities are related to <em>spatial regions</em> (from BFO)</li>
-	</ul>
-      </td>
-      <td>
-	<img width="550" src="dico-common-properties.png">
-      </td>
-    </tr>
-    <tr>
-      <td><b>Activity flows</b>
-	<p>Activities are related to several different kinds of ingredients (often called flows) that have been studied
-	and identified in the field of
-	lean construction. The flows can be classified into transformed objects, material batches, equipment, labor crews, workspaces,
-	information objects, and environmental conditions, and each activity can have several flows in each of these
-	categories. To be executable an activity requires that its ingredients are in a 
-	proper state before the execution (preconditions) or during it (e.g., resource reservations). Moreover, the
-	activity transforms the state of some of the ingredients as the result of its execution (effects) - this being
-	the purpose of executing the activity in the first place. </p>
+<h3>Overview of the scope</h3>
 
-	<p>
-	An essential goal is to be able to link
-	different entities to activities since the interest in construction management is in the progress of activity execution
-	but direct observations can mostly be collected from other objects than activities themselves (e.g., sensor data about
-	positions of objects or people, occupancy or locations). A proper linking will enable the derivation of activity
-	execution data from the observations about the linked objects. </p>
-	
-      </td>
-      <td>
-	<img width="550" src="dico-flows.png">
-      </td>
-    </tr>
-    <tr>
-      <td><b>Multi-context data</b>
-	<p>
-	Different aspects of construction - such as building objects,
-	resources, or activities - can be represented in multiple different contexts and often it is interesting to
-	compare the differences between those contexts. Building-related examples are as-designed and as-built contexts for BIM models,
-	or more comprehensively the contexts for different LODs (levels of detail/development). Typical activity-related contexts are
-	planned and actual data of project execution. </p>
+<p> Digital construction ontologies aim to capture the relevant objects and properties (relationships and attributes) that can be referred
+to by people or systems during the management and execution of construction or renovation projects. This includes physical and spatial
+entities, temporal regions, information contents, agents, activities, and groupings of objects. </p>
 
-	<p>
-	Multi-context data is represented using the named graphs of RDF
-	datasets. It is an orthogonal mechanism that allows any objects to be associated with different properties - or
-	even different structures - in different contexts. If needed the multi-context mechanism allows the
-	recording of all differences between planned and actual activities. In addition to the traditionally recorded
-	planned and actual start and end times of activities, it is also possible represent actual activities that do
-	not appear in the plans at all (so-called improvised activities). 
-	</p>
-      </td>
-      <td>
-	<img width="550" src="dico-contexts.png">
-      </td>
-    </tr>
-    <tr>
-      <td><b>Variables and constraints</b>
-	<p>Much of the essential information in project management or construction
-	management can be represented in the form of <em>constraints</em>, and over significant periods during project execution, the
-	plans can have incomplete information about the exact values of some properties, such as start and end times of
-	tasks, resources assigned to tasks, locations of entities, and so on. To enable the interoperable sharing of
-	such crucial and common information, the ontologies include a possibility to associate a variable to any
-	property of an object and to represent constraints between variables. This representation is completely
-	orthogonal and can be used to enrich objects and properties defined in any existing ontologies.
-	</p>
-	<p>
-	In the example on the right the properties of an object (<tt>shipment1</tt>) as defined in the ontology are shown in 
-	blue color. Each of those properties is associated with a variable (in red color). The variables again are
-	associated with constraints (in green color) that limit their possible values. 
-	</p>
-      </td>
-      <td>
-	<img width="550" src="dico-variables.png">
-      </td>
-    </tr>
-    <tr>
-      <td><b>Integration with the broader Semantic Web</b>
-	<p>Digital Construction ontologies are designed to observe the
-	Linked Data principles, thus enabling the decentralized publication of construction data, which is essential in
-	construction projects.
-	</p>
-	<p>The ontologies use
-	or are aligened with well-known existing ontologies, as shown in the figure on the right (import relations are
-	shown as
-	solid and reference relations dashed lines). The Basic Formal Ontology (BFO) is imported as the
-	top-level ontology, the BIM models can be 
-	provided in ifcOWL or BOT, and concepts from other ontologies such as OWL-Time, PROV-O, FOAF, QUDT, SSN/SOSA, and Saref
-	are used as needed. 
-	</p>
-	<p>Further alignment with related efforts such as Industrial Ontology Foundry will be
-	explored. </p>
-      </td>
-      <td>
-	<img  width="550" src="dico-ontology-relations.png">
-      </td>
-    </tr>
-  </tbody>
-</table>
+<p> The overall scope of DICO ontologies is shown in the figure below. Most concepts in the figure are from the Entities ontology. The large
+grey boxes show the areas that specific ontology modules in the DICO suite extend with more specific concepts.  The concepts shown in the
+light-blue boxes in the middle are those defined in DICO, the ones in light-grey boxes belong to BFO ISO and the green ones are from other
+ontologies. The direction of the arrow shows the superclass relation and a two-way arrow means equivalent classes. The texts near to concept
+boxes suggest possible subclasses.  </p>
+
+<img width="100%" src="dico-bfo.png">
+<p>
+The top-level organization of the DICO ontologies are provided by BFO. It divides the entities into two classes,
+<i>Occurrent</i> (things taking place in time, such as processes) and <i>Continuant</i> (things taking place in space, such as
+physical entities or spacial regions). From the perspective of construction management, <i>Activity</i> - a subclass of
+<i>Process</i> - captures the intentional efforts of an <i>Agent</i>. An <i>Agent</i> can be a <i>Person</i> or an
+<i>Organization</i>, and can have <i>Capabilities</i> annd assume <i>Roles</i>. The construction process is
+characterized by a set of <i>InformationContentEntities</i>, such as <i>Designs</i>, <i>Plans</i>, <i>Contracts</i> and
+<i>Issues</i>. 
+</p>
+
+<h3>Labeling: identifiers and categories</h3>
+
+<p> Due to the fragmented nature of construction, there can be multiple parties and systems that manage any particular entities at some
+phase of their lifecycle, and that give identifiers, classifications or other labels to those entities. The exact nature and number of such
+labelings is highly context dependent. To promote linking and integration between systems in construction projects, the flexible capability
+to represent the labelings of entities is crucially important.  </p>
+
+<p> In DICO, any <i>Entity</i> can be associated with a number of <i>Identifiers</i> and <i>Categories</i>. They can be <i>identifiedBy</i>
+have Globally Unique Identifiers (GUID), and often multiple of them, each given by a different stage or system during its
+lifecycle. Moreover, objects can also have multiple local identifiers, such as a room number in a building or a control point number in a
+building automation system or an identifier in another information system.  </p>
+
+<p> Objects also <i>belongTo</i> different categories in different classification systems, such as OmniClass, Unicode, CoClass, etc. They
+can also belong to categories in other information systems, such as being an identifiable entity in a particular project.  </p>
+
+<p> The actual nature and number of identifiers is dependent on the context of an object, and it is not possible to define separate
+properties for each of them in an ontology in a generic way. Therefore both identifier and categories are represented as objects. An
+identifier has a label (<i>hasLabel</i>) that is a string and it is in relation to some scope (<i>hasScope</i>) which is a
+<i>Category</i>. For globally unique identifier the scope is a global category such as <i>:Guids</i>, and for local identifiers a more
+specific category.  </p>
+
+<center>
+<img width="80%" src="dico-labels.png" />
+</center>
+<p>
+The <i>Labeling</i> can also be used to associate case-specific names for any entity, for instance, to be shown in the
+user interface of a system that stores its data in DICO compliant manner. For example, in a location breakdown structure
+the locations can be associated with names that make sense for the people working in a particular stage of construction. 
+</p>
+
+<h3>Composite entities and space-time</h3>
+<p>
+
+</p>
+<center>
+<img width="80%" src="dico-composite-spacetime.png" />
+</center>
+
+<h3>Activity-flow relations</h3>
+
+<p> <i>Activities</i> have several different kinds of ingredients - often called <i>flows</i> - that have been studied and identified in the
+field of lean construction. The flows can be classified into transformed objects, material batches, equipment, labor crews, workspaces,
+information objects, and environmental conditions, and each activity can have several flows in each of these categories. To be executable an
+activity requires that its ingredients are in a proper state before the execution (preconditions) or during it (e.g., resource
+reservations). Moreover, the activity transforms the state of some of the ingredients as the result of its execution (effects) - this being
+the purpose of executing the activity in the first place.  </p> <center> <img width="50%" src="dico-flows.png"> </center>
+
+<p> An essential goal is to be able to link different entities to activities since the interest in construction management is in the
+progress of activity execution but direct, sensor-based observations can mostly be collected from other objects than activities themselves
+(e.g., sensor data about positions of objects or people, occupancy or locations). A proper linking will enable the derivation of activity
+execution data from the observations about the linked objects.  </p>
+
+<h3>Multi-context data</h3>
+
+<p> Different aspects of construction - such as building objects, resources, or activities - can be represented in multiple different
+contexts and often it is interesting to compare the differences between those contexts. Building-related examples are as-designed and
+as-built contexts for BIM models, or more comprehensively the contexts for different LODs (levels of detail/development). Typical
+activity-related contexts are planned and actual data of project execution. </p>
+
+<p> Multi-context data is represented using the named graphs of RDF datasets. It is an orthogonal mechanism that allows any objects to be
+associated with different properties - or even different structures - in different contexts. If needed the multi-context mechanism allows
+the recording of all differences between planned and actual activities. In addition to the traditionally recorded planned and actual start
+and end times of activities, it is also possible represent actual activities that do not appear in the plans at all (so-called improvised
+activities).  </p>
+
+<center>
+<img width="50%" src="dico-contexts.png">
+</center>
+
+<h3>Variables and constraints</h3>
+
+<p>Much of the essential information in project management or construction management can be represented in the form of
+<em>constraints</em>, and over significant periods during project execution, the plans can have incomplete information about the exact
+values of some properties, such as start and end times of tasks, resources assigned to tasks, locations of entities, and so on. To enable
+the interoperable sharing of such crucial and common information, the ontologies include a possibility to associate a variable to any
+property of an object and to represent constraints between variables. This representation is completely orthogonal and can be used to enrich
+objects and properties defined in any existing ontologies.  </p>
+
+<p> In the example on the right the properties of an object (<tt>shipment1</tt>) as defined in the ontology are shown in blue color. Each of
+those properties is associated with a variable (in red color). The variables again are associated with constraints (in green color) that
+limit their possible values.  </p>
+
+<center>
+<img width="70%" src="dico-variables.png">
+</center>
+
+<h3>Integration with the broader Semantic Web</h3>
+
+<p>Digital Construction ontologies are designed to observe the Linked Data principles, and consequently to enable decentralized publication of
+construction data by the diverse parties in construction projects.  </p>
+
+<p>The ontologies use or are aligened with well-known existing ontologies, as shown in the figure on the right (import relations are shown
+as solid and reference relations dashed lines). The Basic Formal Ontology (BFO) is imported as the top-level ontology, the BIM models can be
+provided in ifcOWL or BOT, and concepts from other ontologies such as OWL-Time, PROV-O, FOAF, QUDT, SSN/SOSA, and Saref are used as needed.
+</p>
+
+<center>
+<img  width="550" src="dico-ontology-relations.png">
+</center>     
+
 
 
 
@@ -372,5 +397,5 @@ external ontologies (such as BIM models represented in ifcOWL or provenance repr
     
 <hr>
 <address></address>
-<!-- hhmts start -->Last modified: Mon Mar  9 17:46:49 EET 2020 <!-- hhmts end -->
+<!-- hhmts start -->Last modified: Mon Jun  8 23:08:51 EEST 2020 <!-- hhmts end -->
 </body> </html>

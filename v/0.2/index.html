@@ -1,0 +1,376 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen" />
+<link rel="stylesheet" href="resources/rec.css" media="screen" />
+<link rel="stylesheet" href="resources/extra.css" media="screen" />
+<link rel="stylesheet" href="resources/owl.css" media="screen" />
+<style>
+table {
+  border-collapse: collapse;
+}
+.plain {
+  border: none;
+  background: none;
+  margin-left: 0px;
+  padding-left: 0px;
+  text-align: left;  
+}
+table, th, td {
+  border: 1px solid black;
+}
+td.narrow {
+  font-size: small;
+  font-stretch: ultra-condensed;
+}
+</style>
+
+<title>Digital Construction Ontologies</title>
+</head>
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Digital Construction Ontologies</h1>
+
+<table class="plain">
+  <tr class="plain">
+    <td class="plain">
+      <p><b>Version</b></p>
+    </td>
+    <td class="plain">
+      <p>0.2</p>
+    </td>
+  </tr>
+  <tr class="plain">
+    <td class="plain">
+      <p><b>Status</b></p>
+    </td>
+    <td class="plain">
+      <p>Ontology Specification Draft</p>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<h2>Purpose</h2>
+
+<p> Digital technologies are increasingly used in all stages of construction lifecycle.  Existing buildings and sites
+can be mapped with scanning technologies, designs created using the tools of building information modeling (BIM),
+design and management information consumed at the site through mobile devices, the progress of construction
+monitored with sensors (position, occupancy, activity state) and scanning devices, and facility management
+based on data gathered by building automation systems (BAS) and sensors. </p>
+
+<p> Digital construction means that large volumes of heterogeneous data will be produced at each lifecycle stage. It is
+a significant challenge to process and interrelate different pieces of data into a meaningful and accurate overall
+picture that is operationally useful and understandable to both human and automated agents. The purpose of the Digital
+Construction Ontology Suite is to address the semantic level of this challenge, by providing the essential concepts and
+properties faced in construction and renovation projects, thus paving the ways to the ultimate integration of
+information from different decentralized sources over construction lifecycle. </p>
+
+<hr>
+
+<h2>Ontology suite (https://w3id.org/digitalconstruction/) </h2>
+
+<table>
+  <tbody>
+    <tr><td><b>Entities</b></td>
+    <td class="narrow"><a href="https://w3id.org/digitalconstruction/Entities">https://w3id.org/digitalconstruction/Entities</a></td>
+    <td>Identifiable entities with classifications, breakdowns and groupings</td></tr>
+  
+    <tr><td><b>Processes</b></td>
+    <td class="narrow"><a href="https://w3id.org/digitalconstruction/Processes">https://w3id.org/digitalconstruction/Processes</a></td>
+    <td>Activities, capabilities, constraints and variables </td></tr>
+    
+    <tr><td><b>Agents</b></td>
+    <td class="narrow"><a href="https://w3id.org/digitalconstruction/Agents">https://w3id.org/digitalconstruction/Agents</a></td>
+    <td>Actors and stakeholders, and their relations and contracts</td></tr>
+    
+    <tr><td><b>Information</b></td>
+    <td class="narrow"><a href="https://w3id.org/digitalconstruction/Information">https://w3id.org/digitalconstruction/Information</a></td>
+    <td>Information content entities including designs, plans, events, and issues </td></tr>
+
+    <tr><td><b>Contexts</b></td>
+    <td class="narrow"><a href="https://w3id.org/digitalconstruction/Contexts">https://w3id.org/digitalconstruction/Contexts</a></td>
+    <td>Multi-contexts data: planned/actual, as-designed/as-built, levels of detail </td></tr>
+
+    <tr><td><b>Variabless</b></td>
+    <td class="narrow"><a href="https://w3id.org/digitalconstruction/Variables">https://w3id.org/digitalconstruction/Variables</a></td>
+    <td>Variables and constraints to support the representation of incomplete plans and
+    management of changes </td></tr>
+
+    <tr><td><b>Occupant Behavior</b></td>
+    <td class="narrow"><a href="https://w3id.org/digitalconstruction/OccupantBehavior">https://w3id.org/digitalconstruction/OccupantBehavior</a></td>
+    <td>Occupant behavior and comfort </td></tr>
+
+    <tr><td><b>Indoor Air Quality</b></td>
+    <td class="narrow"><a href="https://w3id.org/digitalconstruction/IndoorAirQuality">https://w3id.org/digitalconstruction/IndoorAirQuality</a></td>
+    <td>Indoor air quality</td></tr>
+
+    <tr><td><b>Building Acoustics</b></td>
+    <td class="narrow"><a href="https://w3id.org/digitalconstruction/BuildingAcoustics">https://w3id.org/digitalconstruction/BuildingAcoustics</a></td>
+    <td>Building acoustics</td></tr>
+
+    <tr><td><b>Energy Systems</b></td>
+    <td class="narrow"><a href="https://w3id.org/digitalconstruction/EnergySystems">https://w3id.org/digitalconstruction/EnergySystems</a></td>
+    <td>Energy systems of buildings</td></tr>
+
+    <tr><td><b>Building Materials</b></td>
+    <td class="narrow"><a href="https://w3id.org/digitalconstruction/BuildingMaterials">https://w3id.org/digitalconstruction/BuildingMaterials</a></td>
+    <td>Building materials</td></tr>
+
+  </tbody>
+</table>
+
+<hr>
+
+<h2>External ontologies</h2>
+
+<p> The ontologies in the Digital Construction Ontology Suite are related to other existing ontologies: (1) the
+<em>concepts</em> of the ontologies above can be based on the concepts of the external ontologies (such as those in BFO or
+FOAF), or (2) the <em>data</em> represented with above ontologies may need the use also concepts and properties of the
+external ontologies (such as BIM models represented in ifcOWL or provenance represented with PROV-O). </p>
+
+<table>
+  <tbody>
+    <tr><td><b>BFO</b></td>
+    <td><a href="https://github.com/bfo-ontology/BFO/wiki">Basic Formal Ontology</a></td>
+    <td class="narrow"><a href="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl">http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl</a></td>
+    <td>Fundamental categories</td></tr>
+  
+    <tr><td><b>ifcOWL</b></td>
+    <td><a href="https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/">IFC Ontology</a></td>
+    <td class="narrow"><a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL">https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL</a></td>
+    <td>BIM models</td></tr>
+
+    <tr><td><b>OWL-Time</b></td>
+    <td><a href="https://www.w3.org/TR/owl-time/">Time Ontology</a></td>
+    <td class="narrow"><a href="https://www.w3.org/2006/time">https://www.w3.org/2006/time</a></td>
+    <td>Time periods and instants</td></tr>
+
+    <tr><td><b>FOAF</b></td>
+    <td><a href="http://xmlns.com/foaf/spec/">Friend of a Friend</a></td>
+    <td class="narrow"><a href="http://xmlns.com/foaf/spec/">http://xmlns.com/foaf/spec/</a></td>
+    <td>Agents and social networks</td></tr>
+
+    <tr><td><b>Org</b></td>
+    <td><a href="https://www.w3.org/TR/vocab-org/">Organization ontology</a></td>
+    <td class="narrow"><a href="https://www.w3.org/TR/vocab-org/">https://www.w3.org/TR/vocab-org/</a></td>
+    <td>Organizations, posts, roles</td></tr>
+
+    <tr><td><b>PROV-O</b></td>
+    <td><a href="https://www.w3.org/TR/prov-o/">Provenance ontology</a></td>
+    <td class="narrow"><a href="https://www.w3.org/TR/prov-o/">https://www.w3.org/TR/prov-o/</a></td>
+    <td>Origin or information</td></tr>
+
+    <tr><td><b>QUDT</b></td>
+    <td><a href="http://www.qudt.org/2.1/catalog/qudt-catalog.html">Quantities, Units, Dimensions and Types</a></td>
+    <td class="narrow"><a href="http://qudt.org/2.1/schema/qudt">http://qudt.org/2.1/schema/qudt</a></td>
+    <td>Units of measurement</td></tr>
+
+    <tr><td><b>SSN</b></td>
+    <td><a href="https://www.w3.org/TR/vocab-ssn/">Semantic Sensor Network Ontology</a></td>
+    <td class="narrow"><a href="http://www.w3.org/ns/ssn/">http://www.w3.org/ns/ssn/</a></td>
+    <td>Sensor and actuator systems</td></tr>
+
+    <tr><td><b>SOSA</b></td>
+    <td><a href="https://www.w3.org/TR/vocab-ssn/">Sensor, Observation, Sample and Actuator</a></td>
+    <td class="narrow"><a href="http://www.w3.org/ns/sosa/">http://www.w3.org/ns/sosa/</a></td>
+    <td>Sensor and actuation data</td></tr>
+
+    <tr><td><b>Saref</b></td>
+    <td><a href="https://w3id.org/saref#">Smart Appliances Reference Ontology</a></td>
+    <td class="narrow"><a href="https://w3id.org/saref#">https://w3id.org/saref#</a></td>
+    <td>Smart appliances</td></tr>
+
+    <tr><td><b>Calidad-Aire</b></td>
+    <td><a href="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/calidad-aire">Air quality ontology</a></td>
+    <td class="narrow"><a href="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/calidad-aire">http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/calidad-aire</a></td>
+    <td>City air quality</td></tr>
+
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Overview of the contents of the ontologies</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td><b>Scope</b>
+	<p>
+	Digital construction ontologies aim to capture the relevant objects and properties (relationships and
+	attributes) that can be referred to by people or systems during the management and execution of construction or
+	renovation projects. This includes physical and spatial entities, temporal regions, information contents,
+	agents, activities, and groupings of objects. </p>
+	<p>
+	The primary aim in Digital Construction Ontologies is to define the upper-level concepts (such as those shown
+	in boxes on the right) while providing the possibility to create additional ontologies that extend those
+	definitions with additional more specific concepts (for instance, concepts like those shown outside of boxes on
+	the right).  
+	</p>
+	
+      </td>
+      <td>
+	<img width="550" src="dico-scope.png">
+      </td>
+    </tr>
+    <tr>
+      <td><b>Common properties</b>
+	<p>All identifiable entities can be associated with multiple different <em>identifiers</em> and
+	<em>classifications</em> to facilitate the linking to other construction information, both at the instance
+	level and at the category level.</p>
+	
+	<p>In addition, there are some important other relations:</p>
+	<ul>
+	  <li>All objects can be decomposed into <em>parts</em>.</li>
+	  <li>The parts of activities are called <em>subactivities</em>.</li>
+	  <li>Information entities are <em>about</em> other identifiable objects.</li>
+	  <li>Groups can contain any identifiable objects as their <em>members</em>.</li>
+	  <li>Agents can own <em>assets</em>.</li>
+	  <li>Space occupying entities are related to <em>spatial regions</em> (from BFO)</li>
+	</ul>
+      </td>
+      <td>
+	<img width="550" src="dico-common-properties.png">
+      </td>
+    </tr>
+    <tr>
+      <td><b>Activity flows</b>
+	<p>Activities are related to several different kinds of ingredients (often called flows) that have been studied
+	and identified in the field of
+	lean construction. The flows can be classified into transformed objects, material batches, equipment, labor crews, workspaces,
+	information objects, and environmental conditions, and each activity can have several flows in each of these
+	categories. To be executable an activity requires that its ingredients are in a 
+	proper state before the execution (preconditions) or during it (e.g., resource reservations). Moreover, the
+	activity transforms the state of some of the ingredients as the result of its execution (effects) - this being
+	the purpose of executing the activity in the first place. </p>
+
+	<p>
+	An essential goal is to be able to link
+	different entities to activities since the interest in construction management is in the progress of activity execution
+	but direct observations can mostly be collected from other objects than activities themselves (e.g., sensor data about
+	positions of objects or people, occupancy or locations). A proper linking will enable the derivation of activity
+	execution data from the observations about the linked objects. </p>
+	
+      </td>
+      <td>
+	<img width="550" src="dico-flows.png">
+      </td>
+    </tr>
+    <tr>
+      <td><b>Multi-context data</b>
+	<p>
+	Different aspects of construction - such as building objects,
+	resources, or activities - can be represented in multiple different contexts and often it is interesting to
+	compare the differences between those contexts. Building-related examples are as-designed and as-built contexts for BIM models,
+	or more comprehensively the contexts for different LODs (levels of detail/development). Typical activity-related contexts are
+	planned and actual data of project execution. </p>
+
+	<p>
+	Multi-context data is represented using the named graphs of RDF
+	datasets. It is an orthogonal mechanism that allows any objects to be associated with different properties - or
+	even different structures - in different contexts. If needed the multi-context mechanism allows the
+	recording of all differences between planned and actual activities. In addition to the traditionally recorded
+	planned and actual start and end times of activities, it is also possible represent actual activities that do
+	not appear in the plans at all (so-called improvised activities). 
+	</p>
+      </td>
+      <td>
+	<img width="550" src="dico-contexts.png">
+      </td>
+    </tr>
+    <tr>
+      <td><b>Variables and constraints</b>
+	<p>Much of the essential information in project management or construction
+	management can be represented in the form of <em>constraints</em>, and over significant periods during project execution, the
+	plans can have incomplete information about the exact values of some properties, such as start and end times of
+	tasks, resources assigned to tasks, locations of entities, and so on. To enable the interoperable sharing of
+	such crucial and common information, the ontologies include a possibility to associate a variable to any
+	property of an object and to represent constraints between variables. This representation is completely
+	orthogonal and can be used to enrich objects and properties defined in any existing ontologies.
+	</p>
+	<p>
+	In the example on the right the properties of an object (<tt>shipment1</tt>) as defined in the ontology are shown in 
+	blue color. Each of those properties is associated with a variable (in red color). The variables again are
+	associated with constraints (in green color) that limit their possible values. 
+	</p>
+      </td>
+      <td>
+	<img width="550" src="dico-variables.png">
+      </td>
+    </tr>
+    <tr>
+      <td><b>Integration with the broader Semantic Web</b>
+	<p>Digital Construction ontologies are designed to observe the
+	Linked Data principles, thus enabling the decentralized publication of construction data, which is essential in
+	construction projects.
+	</p>
+	<p>The ontologies use
+	or are aligened with well-known existing ontologies, as shown in the figure on the right (import relations are
+	shown as
+	solid and reference relations dashed lines). The Basic Formal Ontology (BFO) is imported as the
+	top-level ontology, the BIM models can be 
+	provided in ifcOWL or BOT, and concepts from other ontologies such as OWL-Time, PROV-O, FOAF, QUDT, SSN/SOSA, and Saref
+	are used as needed. 
+	</p>
+	<p>Further alignment with related efforts such as Industrial Ontology Foundry will be
+	explored. </p>
+      </td>
+      <td>
+	<img  width="550" src="dico-ontology-relations.png">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h2>Contributing projects </h2>
+
+<table>
+  <tr>
+    <td><center><a href="https://www.bim4eeb-project.eu/"><img height="200" src="bim4eeb-logo3.png">
+      <p>BIM4EEB - BIM-based toolkit for efficient renovation of residential buildings</p></a>
+      <p>(European Union's H2020 research and innovation programme, grant N. 820660)</p></center></td>
+     <td><center><a href="https://www.aalto.fi/en/diction"><img height="200" src="diction-logo.png">
+       <p>Diction - Development of shared situational awareness in construction projects</p></a>
+       <p>(Business Finland, Collaborative research project 2018-2020)</center></td>
+  </tr>
+</table>
+<hr>
+
+<h2>Contributing organizations </h2>
+<ul>
+  <li><p><a href="https://www.aalto.fi/en">Aalto University</a></p></li>
+  <li><p><a href="https://www.suite5.eu/">SUITE5</a></p></li>
+  <li><p><a href="https://tu-dresden.de/">TU Dresden</a></p></li>
+  <li><p><a href="https://visualynk.com/#/">VisuaLynk</a></p></li>
+  <li><p><a href="https://www.vttresearch.com/">VTT</a></p></li>
+</ul>
+<hr>
+
+<h2>Contacts</h2>
+<ul>
+  <li><p><a href="mailto:seppo.torma@visualynk.com">Seppo Törmä</a></p></li>
+  <li><p><a href="mailto:yuan.zheng@aalto.fi">Yuan Zheng</a></p></li>
+</ul>
+<hr>
+
+<h2>License</h2>
+<dd>
+    <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-Creative%20Commons%20Attribution%204.0%20International%20License-blue.svg" alt="http://creativecommons.org/licenses/by/4.0/" />
+    </a>
+    <a href="http://creativecommons.org/licenses/by/4.0/" rel="license" target="_blank">
+        <img src="https://i.creativecommons.org/l/by/4.0/88x31.png" style="border-width:0" alt="License" />
+    </a>
+</dd>
+    
+<hr>
+<address></address>
+<!-- hhmts start -->Last modified: Tue May 12 16:11:58 EEST 2020 <!-- hhmts end -->
+</body> </html>
