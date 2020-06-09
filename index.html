@@ -313,23 +313,9 @@ execution data from the observations about the linked objects.  </p>
 </center>
 
 <p>
-The figure above presents the relations in DICO ontologies to represent the flows of activities. The <tt>dice:Activity</tt> has the
-following relations, defined in the Entities ontology:
+The figure above presents the relations in DICO ontologies to represent the flows of activities, defined in the DICO Entities and Processes ontologies. The table below gives a detailed description of
+the flow relations. (Note that <tt>dice:hasParticipant</tt> is equivalent to BFO's <tt>'has participant'</tt>, and <tt>dice:occursIn</tt> BFO's <tt>'occurs in'</tt>).
 </p>
-
-<ul>
-  <li><tt>dice:hasAgent</tt> (domain: <tt>dice:Agent</tt>, inverse: <tt>isAgentIn</tt>, subproperty of: <tt>dice:hasParticipant</tt> that is equivalent to BFO's <tt>'has participant'</tt>)</li>
-  <li><tt>dice:hasMaterial</tt> (domain: <tt>dice:MaterialBatch</tt>, inverse: subproperty of: <tt>dice:hasParticipant</tt>)</li>
-  <li><tt>dice:hasEquipment</tt> (domain: <tt>dice:Equipment</tt>, inverse: <tt>dice:isEquipmentIn</tt>, subproperty of: <tt>dice:hasParticipant</tt>)</li>
-  <li><tt>dice:hasInformation</tt> (domain: <tt>dice:InformationContentEntity</tt>, inverse: <tt>dice:isInformationIn</tt>, subproperty of <tt>dice:hasParticipant</tt>)</li>
-  <li><tt>dice:occursIn</tt> (domain: <tt>dice:Location</tt>, inverse: <tt>dice:hasEnvironment</tt>, equivalent to BFO's <tt>'occurs in'</tt>)
-</ul>
-In addition, in the Processes ontoloogy there is the following additional property for <tt>dicp:ObjectActivity</tt> that is a subclass of <tt>dice:Activity</tt>:
-<ul>
-  <li><tt>dice:hasObject</tt> (domain: BFO's <tt>'entity'</tt>, inverse: <tt>dicp:isObjectIn</tt>, subproperty of:
-  <tt>dice:hasParticipant</tt>)</li>
-</ul>
-
 
 <table>
   <tr><th>Ontology</th><th>Property</th><th>Domain</th><th>Range</th><th>Inverse</th><th>Subproperty of</th></tr>
@@ -340,8 +326,6 @@ In addition, in the Processes ontoloogy there is the following additional proper
   <tr><td><tt>dice:occursIn</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:Location</tt></td><td><tt>dice:hasEnvironment</tt></td><td><tt>-</tt></td></tr>  
   <tr><td>Processes</td><td><tt>dicp:hasObject</tt></td><td><tt>dicp:ObjectActivity</tt></td><td><tt>BFO's 'entity'</tt></td><td><tt>dicp:isObjectIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr>
 </table>
-
-<p>Note that <tt>dice:hasParticipant</tt> is equivalent to BFO's <tt>'has participant'</tt>, and <tt>dice:occursIn</tt> BFO's <tt>'occurs in'</tt>  </p>
 
 <p>
 The object of an activity (using <tt>dicp:hasObject</tt> property) can be, in addition to
@@ -451,5 +435,5 @@ provided in ifcOWL or BOT, and concepts from other ontologies such as OWL-Time, 
     
 <hr>
 <address></address>
-<!-- hhmts start -->Last modified: Tue Jun  9 13:31:54 EEST 2020 <!-- hhmts end -->
+<!-- hhmts start -->Last modified: Tue Jun  9 13:38:12 EEST 2020 <!-- hhmts end -->
 </body> </html>
