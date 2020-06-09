@@ -297,12 +297,66 @@ field of lean construction. The flows can be classified into transformed objects
 information objects, and environmental conditions, and each activity can have several flows in each of these categories. To be executable an
 activity requires that its ingredients are in a proper state before the execution (preconditions) or during it (e.g., resource
 reservations). Moreover, the activity transforms the state of some of the ingredients as the result of its execution (effects) - this being
-the purpose of executing the activity in the first place.  </p> <center> <img width="50%" src="dico-flows.png"> </center>
+the purpose of executing the activity in the first place.  </p>
+
+<center>
+<img width="50%" src="dico-flows.png">
+</center>
 
 <p> An essential goal is to be able to link different entities to activities since the interest in construction management is in the
 progress of activity execution but direct, sensor-based observations can mostly be collected from other objects than activities themselves
 (e.g., sensor data about positions of objects or people, occupancy or locations). A proper linking will enable the derivation of activity
 execution data from the observations about the linked objects.  </p>
+
+<center>
+<img width="50%" src="dico-activity-flows.png">
+</center>
+
+<p>
+The figure above presents the relations in DICO ontologies to represent the flows of activities. The <tt>dice:Activity</tt> has the
+following relations, defined in the Entities ontology:
+</p>
+
+<ul>
+  <li><tt>dice:hasAgent</tt> (domain: <tt>dice:Agent</tt>, inverse: <tt>isAgentIn</tt>, subproperty of: <tt>dice:hasParticipant</tt> that is equivalent to BFO's <tt>'has participant'</tt>)</li>
+  <li><tt>dice:hasMaterial</tt> (domain: <tt>dice:MaterialBatch</tt>, inverse: subproperty of: <tt>dice:hasParticipant</tt>)</li>
+  <li><tt>dice:hasEquipment</tt> (domain: <tt>dice:Equipment</tt>, inverse: <tt>dice:isEquipmentIn</tt>, subproperty of: <tt>dice:hasParticipant</tt>)</li>
+  <li><tt>dice:hasInformation</tt> (domain: <tt>dice:InformationContentEntity</tt>, inverse: <tt>dice:isInformationIn</tt>, subproperty of <tt>dice:hasParticipant</tt>)</li>
+  <li><tt>dice:occursIn</tt> (domain: <tt>dice:Location</tt>, inverse: <tt>dice:hasEnvironment</tt>, equivalent to BFO's <tt>'occurs in'</tt>)
+</ul>
+In addition, in the Processes ontoloogy there is the following additional property for <tt>dicp:ObjectActivity</tt> that is a subclass of <tt>dice:Activity</tt>:
+<ul>
+  <li><tt>dice:hasObject</tt> (domain: BFO's <tt>'entity'</tt>, inverse: <tt>dicp:isObjectIn</tt>, subproperty of:
+  <tt>dice:hasParticipant</tt>)</li>
+</ul>
+
+
+<table>
+  <tr><th>Ontology</th><th>Property</th><th>Domain</th><th>Range</th><th>Inverse</th><th>Subproperty of</th></tr>
+  <tr><td rowspan="5">Entities</td><td><tt>dice:hasAgent</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:Agent</tt></td><td><tt>dice:isAgentIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr> 
+  <tr><td><tt>dice:hasMaterial</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:MaterialBatch</tt></td><td><tt>dice:isMaterialIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr> 
+  <tr><td><tt>dice:hasEquipment</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:Equipment</tt></td><td><tt>dice:isEquipmentIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr> 
+  <tr><td><tt>dice:hasInformation</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:Information</tt></td><td><tt>dice:isInformationIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr> 
+  <tr><td><tt>dice:occursIn</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:Location</tt></td><td><tt>dice:hasEnvironment</tt></td><td><tt>-</tt></td></tr>  
+  <tr><td>Processes</td><td><tt>dicp:hasObject</tt></td><td><tt>dicp:ObjectActivity</tt></td><td><tt>BFO's 'entity'</tt></td><td><tt>dicp:isObjectIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr>
+</table>
+
+<p>Note that <tt>dice:hasParticipant</tt> is equivalent to BFO's <tt>'has participant'</tt>, and <tt>dice:occursIn</tt> BFO's <tt>'occurs in'</tt>  </p>
+
+<p>
+The object of an activity (using <tt>dicp:hasObject</tt> property) can be, in addition to
+<tt>dice:BuildingObject</tt> also anything else that can be a focus of work, such as <tt>dice:Location</tt>, <tt>dice:Group</tt> (e.g., for
+procurement and logistic activities), <tt>dice:Activity</tt> (e.g., for
+managerial activities), or <tt>dice:InformationContentEntity</tt> (e.g., for design and planning activities). 
+</p>
+
+<p>
+It should be noted that these properties as such allow only a partial representation of the relations of activities and flows. They tell
+what entities are the ingredients of an activity but do not specify what should be the state of an entity before the execution of an
+activity (preconditions) or what would be the state after it (effects). The representation of these states require the concepts from the
+Variables ontologies described below. 
+</p>
+
 
 <h3>Multi-context data</h3>
 
@@ -397,5 +451,5 @@ provided in ifcOWL or BOT, and concepts from other ontologies such as OWL-Time, 
     
 <hr>
 <address></address>
-<!-- hhmts start -->Last modified: Mon Jun  8 23:08:51 EEST 2020 <!-- hhmts end -->
+<!-- hhmts start -->Last modified: Tue Jun  9 13:31:54 EEST 2020 <!-- hhmts end -->
 </body> </html>
