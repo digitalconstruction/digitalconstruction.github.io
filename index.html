@@ -154,6 +154,13 @@ ultimate integration of information from different decentralized sources over co
     <td><tt>dicbm:</tt></td>
     <td>Building materials</td></tr>
 
+    <tr><td><b>Lifecycle</b></td>
+    <td class="narrow"><a href="https://w3id.org/digitalconstruction/Lifecycle">https://w3id.org/digitalconstruction/Lifecycle</a></td>
+    <td><tt>diclc:</tt></td>
+    <td>Evolution of information over construction
+    lifecycle and refinement through LOD levels</td></tr>
+
+
   </tbody>
 </table>
 
@@ -320,14 +327,21 @@ the flow relations. (Note that <tt>dice:hasParticipant</tt> is equivalent to BFO
 </p>
 
 <table>
-  <tr><th>Ontology</th><th>Property</th><th>Domain</th><th>Range</th><th>Inverse</th><th>Subproperty of</th></tr>
-  <tr><td rowspan="5">Entities</td><td><tt>dice:hasAgent</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:Agent</tt></td><td><tt>dice:isAgentIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr> 
-  <tr><td><tt>dice:hasMaterial</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:MaterialBatch</tt></td><td><tt>dice:isMaterialIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr> 
-  <tr><td><tt>dice:hasEquipment</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:Equipment</tt></td><td><tt>dice:isEquipmentIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr> 
-  <tr><td><tt>dice:hasInformation</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:Information</tt></td><td><tt>dice:isInformationIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr> 
-  <tr><td><tt>dice:occursIn</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:Location</tt></td><td><tt>dice:hasEnvironment</tt></td><td><tt>-</tt></td></tr>  
-  <tr><td>Processes</td><td><tt>dicp:hasObject</tt></td><td><tt>dicp:ObjectActivity</tt></td><td><tt>BFO's 'entity'</tt></td><td><tt>dicp:isObjectIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr>
-</table>
+  <thead>
+    <tr>
+      <th>Ontology</th><th>Property</th><th>Domain</th><th>Range</th><th>Inverse</th><th>Subproperty of</th>
+    </tr>
+    </thead>
+  <tbody>
+    <tr><td rowspan="5">Entities</td><td><tt>dice:hasAgent</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:Agent</tt></td><td><tt>dice:isAgentIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr> 
+    <tr><td><tt>dice:hasMaterial</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:MaterialBatch</tt></td><td><tt>dice:isMaterialIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr> 
+    <tr><td><tt>dice:hasEquipment</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:Equipment</tt></td><td><tt>dice:isEquipmentIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr> 
+    <tr><td><tt>dice:hasInformation</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:Information</tt></td><td><tt>dice:isInformationIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr> 
+    <tr><td><tt>dice:occursIn</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:Location</tt></td><td><tt>dice:hasEnvironment</tt></td><td><tt>-</tt></td></tr>  
+    <tr><td>Processes</td><td><tt>dicp:hasObject</tt></td><td><tt>dicp:ObjectActivity</tt></td><td><tt>BFO's
+      'entity'</tt></td><td><tt>dicp:isObjectIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr>
+    </tbody>
+  </table>
 
 <p>
 The object of an activity (using <tt>dicp:hasObject</tt> property) can be, in addition to
@@ -437,5 +451,5 @@ provided in ifcOWL or BOT, and concepts from other ontologies such as OWL-Time, 
     
 <hr>
 <address></address>
-<!-- hhmts start -->Last modified: Tue Jun  9 14:29:33 EEST 2020 <!-- hhmts end -->
+<!-- hhmts start -->Last modified: Thu Jul 23 14:50:24 EEST 2020 <!-- hhmts end -->
 </body> </html>
