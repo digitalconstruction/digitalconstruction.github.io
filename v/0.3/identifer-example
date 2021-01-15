@@ -1,0 +1,44 @@
+:MasterPlan1 a dici:MasterPlan ;
+        rdfs:label "MasterPlan1" ;
+        dice:identifiedBy [a dice:Identifier ;
+            dice:hasScope :Guids ;
+            dice:hasLabel "a12c3898-8e79-4f99-bcc6-95ee5f20737c2" ] ;
+        dice:belongsTo [a dice:Category ;
+            dice:hasScope :PlanTemplates ;
+            dice:hasLabel "3572015c-5d86-48ff-a377-255fb7998bc2" ] ;
+        dice:belongsTo [a dice:Category ;
+            dice:hasScope :BimmsProjects ;
+            dice:hasLabel "123456" ] ;
+        dice:belongsTo [a dice:Category ;
+            dice:hasScope :BimPlannerProjects ;
+            dice:hasLabel "234567" ] ;
+        dice:belongsTo [a dice:Category ;
+            dice:hasScope :MasterPlan1Versions ;
+            dice:hasLabel "1" ] ;
+        dice:contentRepresentedIn :MasterPlan1Context .
+
+<p>
+An example of a use of identifiers and categories for an object, the following is a master plan object that has a GUID,
+has a template identified by a GUID, and belongs to a project in another system. 
+</p>
+<tt>
+:MasterPlan1 a dici:MasterPlan ; 
+        rdfs:label "MasterPlan1" ;
+        dice:identifiedBy [a dice:Identifier ;
+            dice:hasScope :Guids ;
+            dice:hasLabel "a12c3898-8e79-4f99-bcc6-95ee5f20737c2" ] ;
+        dice:belongsTo [a dice:Category ;
+            dice:hasScope :PlanTemplates ;
+            dice:hasLabel "3572015c-5d86-48ff-a377-255fb7998bc2" ] ;
+        dice:belongsTo [a dice:Category ;
+            dice:hasScope :BimmsProjects ;
+            dice:hasLabel "123456" ] ;
+        dice:belongsTo [a dice:Category ;
+            dice:hasScope :BimPlannerProjects ;
+            dice:hasLabel "234567" ] ;
+        dice:belongsTo [a dice:Category ;
+            dice:hasScope :MasterPlan1Versions ;
+            dice:hasLabel "1" ] .
+</tt>
+
+
