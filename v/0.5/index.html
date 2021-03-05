@@ -20,7 +20,9 @@ table {
 div.head table.plain { margin-left: 0em; }
 table, th, td {
   border: 1px solid black;
+  text-align: left;
 }
+th { background: rgba(150, 150, 150, 0.3) }
 td.narrow {
   font-size: small;
   font-stretch: ultra-condensed;
@@ -33,7 +35,7 @@ body {
 }
 </style>
 
-<title>Digital Construction Ontologies (Dicon)</title>
+<title>Digital Construction Ontologies</title>
 </head>
 
 <body>
@@ -49,7 +51,7 @@ body {
       <p><b>This version</b></p>
     </td>
     <td class="plain">
-      <p>0.5</p>
+      <p>0.5 (horizontal and vertical segmentation)</p>
     </td>
   </tr>
   <tr class="plain">
@@ -72,86 +74,94 @@ body {
 
 <hr>
 
-<h2>Purpose</h2>
+<h2>Terminology for the representation of digitalized construction and renovation processes</h2>
 
 <p> Digital Construction Ontologies have been defined to work as an enabler of semantic interoperability between systems
 in the construction and renovation domain. It defines basic terms related to built assets, building design, construction
-project planning, and construction planning, including the agents, resources and spatio-temporal aspects. The
-definitions of the ontologies rely heavily on standardized or otherwise established ontologies; the correspondances
-of Digital Construction Ontologies with other ontologies are provided explicitly in separate alignment modules. </p>
+project planning, and construction planning, including the agents, resources and spatio-temporal aspects. The definitions of the ontologies rely heavily
+on standardized or otherwise established ontologies; the correspondances of Digital Construction Ontologies with other
+ontologies are provided explicitly in separate alignment modules. </p>
 
-<p> Digital technologies are increasingly used in all stages of construction lifecycle, from scanning, building
-information modeling and procurement to supply-chain management and construction management. Mobile devices, sensors and
-imaging solutions provide a flood of instantaneous data from the project execution. Digitalized construction projects
-can employ a wide range of task-specific point solutions that can greatly enhance the productivity and quality of
-individual tasks. However, the improvement of overall construction productivity depends even more on what happens
-<em>between the tasks</em>: how the information produced in one task can be utilized in other tasks. By improving the
-semantic interoperaability, the Digital Construction Ontologies are an enabler of smoother information sharing. </p>
+<p> The specific objective is to address the representation of digitalized construction processes. Digital technologies
+are increasingly used in all stages of construction lifecycle, from scanning, building information modeling and
+procurement to supply-chain management and construction management. Mobile devices, sensors and imaging solutions
+provide a flood of instantaneous data from the project execution. Digitalized construction projects can employ a wide
+range of task-specific point solutions that can significantly enhance the productivity and quality of individual
+tasks. However, the improvement of overall construction productivity depends even more on what happens <em>between the
+tasks</em>: how the information produced in one task can be utilized in other tasks. By improving the semantic
+interoperaability, the Digital Construction Ontologies are an enabler of smoother information sharing and eventually
+also higher productivity. </p>
 
 <hr>
 
 <h2>Ontology modules (https://w3id.org/digitalconstruction/) </h2>
 
 <table>
+  <thead>
+    <tr><th><b>Ontology module</b></th>
+    <th><b>Namespace</b></th>
+    <th><b>Prefix</b></th>
+    <th><b>Description</b></th></tr>
+    </thead>
   <tbody>
-    <tr><td><b>Entities</b></td>
-    <td class="narrow"><a href="https://digitalconstruction.github.io/Entities/v/0.3/">https://w3id.org/digitalconstruction/Entities</a></td>
+    <tr><td><a href="https://digitalconstruction.github.io/Entities/0.5/">Entities</a></td>
+    <td><tt>https://w3id.org/digitalconstruction/Entities#</tt></td>
     <td><tt>dice:</tt></td>
-    <td>Identifiable entities with classifications, breakdowns and groupings. Activities and related flows. </td></tr>
+    <td>Entities with identifiers, classifications, breakdowns, and groupings; activities and related flows. </td></tr>
   
-    <tr><td><b>Processes</b></td>
-    <td class="narrow"><a href="https://digitalconstruction.github.io/Processes/v/0.3/">https://w3id.org/digitalconstruction/Processes</a></td>
-    <td><tt>dicp:</tt></td>
-    <td>Activities, capabilities, constraints and variables </td></tr>
-    
-    <tr><td><b>Agents</b></td>
-    <td class="narrow"><a href="https://digitalconstruction.github.io/Agents/v/0.3/">https://w3id.org/digitalconstruction/Agents</a></td>
+    <tr><td><a href="https://digitalconstruction.github.io/Agents/ 0.5 /">Agents</a></td>
+    <td><tt>https://w3id.org/digitalconstruction/Agents#</tt></td>
     <td><tt>dica:</tt></td>
-    <td>Actors and stakeholders, and their relations and contracts</td></tr>
+    <td>Actors, stakeholders, roles, legal persons, capabilities, capacities</td></tr>
     
-    <tr><td><b>Information</b></td>
-    <td class="narrow"><a href="https://digitalconstruction.github.io/Information/v/0.3/">https://w3id.org/digitalconstruction/Information</a></td>
+    <tr><td><a href="https://digitalconstruction.github.io/Information/0.5/">Information</a></td>
+    <td><tt>https://w3id.org/digitalconstruction/Information#</tt></td>
     <td><tt>dici:</tt></td>
-    <td>Information content entities including designs, plans, events, and issues </td></tr>
+    <td>Information content entities, information containers, including designs, plans, events, and issues </td></tr>
 
-    <tr><td><b>Contexts</b></td>
-    <td class="narrow"><a href="https://digitalconstruction.github.io/Contexts/v/0.3/">https://w3id.org/digitalconstruction/Contexts</a></td>
+    <tr><td><a href="https://digitalconstruction.github.io/Processes/0.5/">Processes</a></td>
+    <td><tt>https://w3id.org/digitalconstruction/Processes#</tt></td>
+    <td><tt>dicp:</tt></td>
+    <td>Processes</td></tr>
+    
+    <tr><td><a href="https://digitalconstruction.github.io/Contexts/0.5/">Contexts</a></td>
+    <td><tt>https://w3id.org/digitalconstruction/Contexts#</tt></td>
     <td><tt>dicc:</tt></td>
     <td>Multi-contexts data: planned/actual, as-designed/as-built, levels of detail </td></tr>
 
-    <tr><td><b>Variables</b></td>
-    <td class="narrow"><a href="https://digitalconstruction.github.io/Variables/v/0.3/">https://w3id.org/digitalconstruction/Variables</a></td>
+    <tr><td><a href="https://digitalconstruction.github.io/Variables/0.5/">Variables</a></td>
+    <td><tt>https://w3id.org/digitalconstruction/Variables#</tt></td>
     <td><tt>dicv:</tt></td>
     <td>Variables and constraints to support the representation of incomplete plans and
     management of changes </td></tr>
 
-    <tr><td><b>Occupant Behavior</b></td>
-    <td class="narrow"><a href="https://digitalconstruction.github.io/OccupantBehavior/v/0.3/">https://w3id.org/digitalconstruction/OccupantBehavior</a></td>
+    <tr><td><a href="https://digitalconstruction.github.io/OccupantBehavior/0.5/">OccupantBehavior</a></td>
+    <td><tt>https://w3id.org/digitalconstruction/OccupantBehavior#</tt></td>
     <td><tt>dicob:</tt></td>
     <td>Occupant behavior and comfort </td></tr>
 
-    <tr><td><b>Indoor Air Quality</b></td>
-    <td class="narrow"><a href="https://digitalconstruction.github.io/IndoorAirQuality/v/0.3/">https://w3id.org/digitalconstruction/IndoorAirQuality</a></td>
+    <tr><td><a href="https://digitalconstruction.github.io/IndoorAirQuality/0.5/">IndoorAirQuality</a></td>
+    <td><tt>https://w3id.org/digitalconstruction/IndoorAirQuality#</tt></td>
     <td><tt>diciaq:</tt></td>
     <td>Indoor air quality</td></tr>
 
-    <tr><td><b>Building Acoustics</b></td>
-    <td class="narrow"><a href="https://digitalconstruction.github.io/BuildingAcoustics/v/0.3/">https://w3id.org/digitalconstruction/BuildingAcoustics</a></td>
+    <tr><td><a href="https://digitalconstruction.github.io/BuildingAcoustics/0.5/">BuildingAcoustics</a></td>
+    <td><tt>https://w3id.org/digitalconstruction/BuildingAcoustics#</tt></td>
     <td><tt>dicba:</tt></td>
     <td>Building acoustics</td></tr>
 
-    <tr><td><b>Energy Systems</b></td>
-    <td class="narrow"><a href="https://digitalconstruction.github.io/EnergySystems/v/0.3/">https://w3id.org/digitalconstruction/EnergySystems</a></td>
+    <tr><td><a href="https://digitalconstruction.github.io/EnergySystems/0.5/">EnergySystems</a></td>
+    <td><tt>https://w3id.org/digitalconstruction/EnergySystems#</tt></td>
     <td><tt>dices:</tt></td>
     <td>Energy systems of buildings</td></tr>
 
-    <tr><td><b>Building Materials</b></td>
-    <td class="narrow"><a href="https://digitalconstruction.github.io/BuildingMaterials/v/0.3/">https://w3id.org/digitalconstruction/BuildingMaterials</a></td>
+    <tr><td><a href="https://digitalconstruction.github.io/BuildingMaterials/0.5/">Building Materials</a></td>
+    <td><tt>https://w3id.org/digitalconstruction/BuildingMaterials#</tt></td>
     <td><tt>dicbm:</tt></td>
     <td>Building materials</td></tr>
 
-    <tr><td><b>Lifecycle</b></td>
-    <td class="narrow"><a href="https://digitalconstruction.github.io/Lifecycle/v/0.3/">https://w3id.org/digitalconstruction/Lifecycle</a></td>
+    <tr><td><a href="https://digitalconstruction.github.io/Lifecycle/0.5/">Lifecycle</a></td>
+    <td><tt>https://w3id.org/digitalconstruction/Lifecycle#</tt></td>
     <td><tt>dicl:</tt></td>
     <td>Evolution of information over construction
     lifecycle and refinement through LOD levels</td></tr>
@@ -162,69 +172,81 @@ semantic interoperaability, the Digital Construction Ontologies are an enabler o
 
 <hr>
 
-<h2>External ontologies</h2>
-
-<p> The ontologies in the Digital Construction Ontology Suite are related to other existing ontologies: (1) the
-<em>concepts</em> of the ontologies above can be based on the concepts of the external ontologies (such as those in BFO or
-FOAF), or (2) the <em>data</em> represented with above ontologies may need the use also concepts and properties of the
-external ontologies (such as BIM models represented in ifcOWL or provenance represented with PROV-O). </p>
+<h2>Aligment modules</h2>
 
 <table>
+    <thead>
+    <tr><th><b>Alignment module</b></th>
+    <th><b>Ontology</b></th>
+    <th><b>Namespace</b></th>
+    <th><b>Prefix</b></th>
+    <th><b>Description</b></th></tr>
+    </thead>
   <tbody>
-    <tr><td><b>BFO</b></td>
-    <td><a href="https://basic-formal-ontology.org/">Basic Formal Ontology </a> (<a href="https://www.iso.org/standard/74572.html">ISO/IEC 21838-2</a>)</td>
-    <td class="narrow"><a
-  href="https://buffalo.app.box.com/v/bfo-iso-owl-cl/">https://buffalo.app.box.com/v/bfo-iso-owl-cl (file: owl/bfo-2020-owl)</a></td>
+    <tr><td><a href="https://w3id.org/digitalconstruction/Alignment/BFO/">Alignment/BFO</a></td>
+    <td><a href="https://standards.iso.org/iso-iec/21838/-2/ed-1/en/owl/bfo-iso.owl">BFO</a></td>
+    <td><tt>http://purl.obolibrary.org/obo/</tt></td>
+    <!-- <td class="narrow">http://purl.obolibrary.org/obo/</td> -->
+    <td><tt>obo:</tt></td>
     <td>Fundamental categories</td></tr>
   
-    <tr><td><b>ifcOWL</b></td>
-    <td><a href="https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/">IFC Ontology</a></td>
-    <td class="narrow"><a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL">https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL</a></td>
+    <tr><td><a href="https://w3id.org/digitalconstruction/Alignment/IFC/">Alignment/IFC</a></td>
+    <td><a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL">ifcOWL</a></td>
+    <td><tt>https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL</tt></td>
+    <!-- <td class="narrow">https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL</td> -->
+    <td><tt>ifcowl:</tt></td>
     <td>BIM models</td></tr>
 
-    <tr><td><b>OWL-Time</b></td>
-    <td><a href="https://www.w3.org/TR/owl-time/">Time Ontology</a></td>
-    <td class="narrow"><a href="https://www.w3.org/2006/time">https://www.w3.org/2006/time</a></td>
-    <td>Time periods and instants</td></tr>
+    <tr><td><a href="https://w3id.org/digitalconstruction/Alignment/OWL-Time/">Alignment/OWL-Time</a></td>
+    <td><a href="https://www.w3.org/TR/owl-time/">OWL-Time</a></td>
+    <td><tt>https://www.w3.org/2006/time/</tt></td>
+    <td><tt>time:</tt></td>
+    <td>Time intervals and time instants</td></tr>
 
-    <tr><td><b>FOAF</b></td>
-    <td><a href="http://xmlns.com/foaf/spec/">Friend of a Friend</a></td>
-    <td class="narrow"><a href="http://xmlns.com/foaf/spec/">http://xmlns.com/foaf/spec/</a></td>
+    <tr><td><a href="https://w3id.org/digitalconstruction/Alignment/FOAF/">Alignment/FOAF</a></td>
+    <td><a href="http://xmlns.com/foaf/spec/">FOAF</a></td>
+    <td><tt>http://xmlns.com/foaf/spec/</tt></td>
+    <td><tt>foaf:</tt></td>
     <td>Agents and social networks</td></tr>
 
-    <tr><td><b>Org</b></td>
-    <td><a href="https://www.w3.org/TR/vocab-org/">Organization ontology</a></td>
-    <td class="narrow"><a href="https://www.w3.org/TR/vocab-org/">https://www.w3.org/TR/vocab-org/</a></td>
+    <tr><td><a href="https://w3id.org/digitalconstruction/Alignment/Org/">Alignment/Org</a></td>
+    <td><a href="https://www.w3.org/TR/vocab-org/">Org</a></td>
+    <td><tt>https://www.w3.org/TR/vocab-org/</tt></td>
+    <td><tt>org:</tt></td>
     <td>Organizations, posts, roles</td></tr>
 
-    <tr><td><b>PROV-O</b></td>
-    <td><a href="https://www.w3.org/TR/prov-o/">Provenance ontology</a></td>
-    <td class="narrow"><a href="https://www.w3.org/TR/prov-o/">https://www.w3.org/TR/prov-o/</a></td>
+    <tr><td><a href="https://w3id.org/digitalconstruction/Alignment/PROV-O/">Alignment/PROV-O</a></td>
+    <td><a href="https://www.w3.org/TR/prov-o/">PROV-O</a></td>
+    <td><tt>https://www.w3.org/TR/prov-o/</tt></td>
+    <td><tt>prov:</tt></td>
     <td>Origin or information</td></tr>
 
-    <tr><td><b>QUDT</b></td>
-    <td><a href="http://www.qudt.org/2.1/catalog/qudt-catalog.html">Quantities, Units, Dimensions and Types</a></td>
-    <td class="narrow"><a href="http://qudt.org/2.1/schema/qudt">http://qudt.org/2.1/schema/qudt</a></td>
+    <tr><td><a href="https://w3id.org/digitalconstruction/Alignment/QUDT/">Alignment/QUDT</a></td>
+    <td><a href="http://www.qudt.org/2.1/catalog/qudt-catalog.html">QUDT</a></td>
+    <td><tt>http://qudt.org/2.1/schema/qudt</tt></td>
+    <td><tt>qudt:</tt></td>
     <td>Units of measurement</td></tr>
 
-    <tr><td><b>SSN</b></td>
-    <td><a href="https://www.w3.org/TR/vocab-ssn/">Semantic Sensor Network Ontology</a></td>
-    <td class="narrow"><a href="http://www.w3.org/ns/ssn/">http://www.w3.org/ns/ssn/</a></td>
-    <td>Sensor and actuator systems</td></tr>
+    <tr><td><a href="https://w3id.org/digitalconstruction/Alignment/SSN/">Alignment/SSN</a></td>
+    <td><a href="https://www.w3.org/TR/vocab-ssn/">SSN<br/>SOSA</a></td>
+    <td><tt>http://www.w3.org/ns/ssn/</tt><br/>
+    <tt>http://www.w3.org/ns/sosa/</tt></td>
+    <td><tt>ssn:<br/>sosa:</tt></td>
+    <td>Sensor data and sensor systems</td></tr>
 
-    <tr><td><b>SOSA</b></td>
-    <td><a href="https://www.w3.org/TR/vocab-ssn/">Sensor, Observation, Sample and Actuator</a></td>
-    <td class="narrow"><a href="http://www.w3.org/ns/sosa/">http://www.w3.org/ns/sosa/</a></td>
-    <td>Sensor and actuation data</td></tr>
+    <tr><td><a href="https://w3id.org/digitalconstruction/Alignment/Saref/">Alignment/Saref</a></td>
+    <td><a href="https://saref.etsi.org/core/v3.1.1/">Saref Core</a><br/>
+    <a href="https://saref.etsi.org/saref4bldg/v1.1.2/">Saref4Bldg</a></td>
+    <td><tt>https://saref.etsi.org/core/</tt><br/>
+    <tt>https://saref.etsi.org/saref4bldg/</tt></td>
+    <td><tt>saref:</tt><br/>
+    <tt>s4bldg:</tt></td>
+    <td>Sensor data and sensor systems, in buildings</td></tr>
 
-    <tr><td><b>Saref</b></td>
-    <td><a href="https://w3id.org/saref#">Smart Appliances Reference Ontology</a></td>
-    <td class="narrow"><a href="https://w3id.org/saref#">https://w3id.org/saref#</a></td>
-    <td>Smart appliances</td></tr>
-
-    <tr><td><b>Calidad-Aire</b></td>
-    <td><a href="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/calidad-aire">Air quality ontology</a></td>
-    <td class="narrow"><a href="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/calidad-aire">http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/calidad-aire</a></td>
+    <tr><td><a href="https://w3id.org/digitalconstruction/Alignment/Calidad-Aire/">Alignment/Calidad-Aire</a></td>
+    <td><a href="http://vocab.linkeddata.es/datosabiertos/def/medio-ambiente/calidad-aire">Calidad-Aire</a></td>
+    <td><tt>http://vocab.linkeddata.es/datosabiertos/def/<br/>medio-ambiente/calidad-aire</tt></td>
+    <td><tt>esair:</tt></td>
     <td>City air quality</td></tr>
 
   </tbody>
@@ -454,5 +476,5 @@ provided in ifcOWL or BOT, and concepts from other ontologies such as OWL-Time, 
     
 <hr>
 <address></address>
-<!-- hhmts start -->Last modified: Wed Mar  3 15:24:50 EET 2021 <!-- hhmts end -->
+<!-- hhmts start -->Last modified: Thu Mar  4 18:10:54 EET 2021 <!-- hhmts end -->
 </body> </html>
