@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen" />
+<link rel="stylesheet" href="resources/rec.css" media="screen" />
+<link rel="stylesheet" href="resources/extra.css" media="screen" />
+<link rel="stylesheet" href="resources/owl.css" media="screen" />
+<style>
+table {
+  border-collapse: collapse;
+}
+.plain {
+  border: none;
+  background: none;
+  margin-left: 0em;
+  padding-left: 0px;
+  text-align: left;  
+}
+div.head table.plain { margin-left: 0em; }
+table, th, td {
+  border: 1px solid black;
+text-align: left;
+font-size: small;
+}
+th { background: rgba(150, 150, 150, 0.3) }
+td.narrow {
+  font-size: small;
+  font-stretch: ultra-condensed;
+}
+body {
+  background-image: url('dtf.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
+<title>Digital Construction Ontologies</title>
+</head>
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+
+<h1>Digital Construction Ontologies</h1>
+
+<h2>Contents of the ontologies</h2>
+
+<h3>Overview of the scope</h3>
+
+<p> Digital construction ontologies aim to capture the relevant objects and properties (relationships and attributes) that can be referred
+to by people or systems during the management and execution of construction or renovation projects. This includes physical and spatial
+entities, temporal regions, information contents, agents, activities, and groupings of objects. </p>
+
+<p> The overall scope of Digital Construction Ontologies is shown in the figure below. Most concepts in the figure are from the Entities ontology. The large
+grey boxes show the areas that specific ontology modules in the
+Digital Construction Ontologies extend with more specific concepts.  The concepts shown in the
+light-blue boxes in the middle are those defined in Digital
+Construction Ontologies, the ones in light-grey boxes belong to BFO ISO and the green ones are from other
+ontologies. The direction of the arrow shows the superclass relation and a two-way arrow means equivalent classes. The texts near to concept
+boxes suggest possible subclasses.  </p>
+
+<img width="80%" src="dico-bfo.png">
+<p>
+The top-level organization of the Digital Construction Ontologies ontologies are provided by BFO. It divides the entities into two classes,
+<i>Occurrent</i> (things taking place in time, such as processes) and <i>Continuant</i> (things taking place in space, such as
+physical entities or spacial regions). From the perspective of construction management, <i>Activity</i> - a subclass of
+<i>Process</i> - captures the intentional efforts of an <i>Agent</i>. An <i>Agent</i> can be a <i>Person</i> or an
+<i>Organization</i>, and can have <i>Capabilities</i> annd assume <i>Roles</i>. The construction process is
+characterized by a set of <i>InformationContentEntities</i>, such as <i>Designs</i>, <i>Plans</i>, <i>Contracts</i> and
+<i>Issues</i>. 
+</p>
+
+<h3>Labeling: identifiers and categories</h3>
+
+<p> Due to the fragmented nature of construction, there can be multiple parties and systems that manage any particular entities at some
+phase of their lifecycle, and that give identifiers, classifications or other labels to those entities. The exact nature and number of such
+labelings is highly context dependent. To promote linking and integration between systems in construction projects, the flexible capability
+to represent the labelings of entities is crucially important.  </p>
+
+<p> In Digital Construction Ontologies, any <i>Entity</i> can be associated with a number of <i>Identifiers</i> and <i>Categories</i>. They can be <i>identifiedBy</i>
+have Globally Unique Identifiers (GUID), and often multiple of them, each given by a different stage or system during its
+lifecycle. Moreover, objects can also have multiple local identifiers, such as a room number in a building or a control point number in a
+building automation system or an identifier in another information system.  </p>
+
+<p> Objects also <i>belongTo</i> different categories in different classification systems, such as OmniClass, Unicode, CoClass, etc. They
+can also belong to categories in other information systems, such as being an identifiable entity in a particular project.  </p>
+
+<p> The actual nature and number of identifiers is dependent on the context of an object, and it is not possible to define separate
+properties for each of them in an ontology in a generic way. Therefore both identifier and categories are represented as objects. An
+identifier has a label (<i>hasLabel</i>) that is a string and it is in relation to some scope (<i>hasScope</i>) which is a
+<i>Category</i>. For globally unique identifier the scope is a global category such as <i>:Guids</i>, and for local identifiers a more
+specific category.  </p>
+
+<center>
+<img width="80%" src="dico-labels.png" />
+</center>
+<p>
+The <i>Labeling</i> can also be used to associate case-specific names for any entity, for instance, to be shown in the
+user interface of a system that stores its data in Digital Construction Ontologies compliant manner. For example, in a location breakdown structure
+the locations can be associated with names that make sense for the people working in a particular stage of construction. 
+</p>
+
+<h3>Composite entities and space-time</h3>
+<p>
+
+</p>
+<center>
+<img width="80%" src="dico-composite-spacetime.png" />
+</center>
+
+<h3>Activity-flow relations</h3>
+
+<p> <i>Activities</i> have several different kinds of ingredients - often called <i>flows</i> - that have been studied and identified in the
+field of lean construction. The flows can be classified into transformed objects, material batches, equipment, labor crews, workspaces,
+information objects, and environmental conditions, and each activity can have several flows in each of these categories. To be executable an
+activity requires that its ingredients are in a proper state before the execution (preconditions) or during it (e.g., resource
+reservations). Moreover, the activity transforms the state of some of the ingredients as the result of its execution (effects) - this being
+the purpose of executing the activity in the first place.  </p>
+
+<center>
+<img width="50%" src="dico-flows.png">
+</center>
+
+<p> An essential goal is to be able to link different entities to activities since the interest in construction management is in the
+progress of activity execution but direct, sensor-based observations can mostly be collected from other objects than activities themselves
+(e.g., sensor data about positions of objects or people, occupancy or locations). A proper linking will enable the derivation of activity
+execution data from the observations about the linked objects.  </p>
+
+<center>
+<img width="50%" src="dico-activity-flows.png">
+</center>
+
+<p>
+The figure above presents the relations in Digital Construction
+Ontologies ontologies to represent the flows of activities, defined in
+the Digital Construction Entities and Processes ontologies. The table below gives a detailed description of
+the flow relations. (Note that <tt>dice:hasParticipant</tt> is equivalent to BFO's <tt>'has participant'</tt>, and <tt>dice:occursIn</tt> BFO's <tt>'occurs in'</tt>).
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ontology</th><th>Property</th><th>Domain</th><th>Range</th><th>Inverse</th><th>Subproperty of</th>
+    </tr>
+    </thead>
+  <tbody>
+    <tr><td rowspan="5">Entities</td><td><tt>dice:hasAgent</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:Agent</tt></td><td><tt>dice:isAgentIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr> 
+    <tr><td><tt>dice:hasMaterial</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:MaterialBatch</tt></td><td><tt>dice:isMaterialIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr> 
+    <tr><td><tt>dice:hasEquipment</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:Equipment</tt></td><td><tt>dice:isEquipmentIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr> 
+    <tr><td><tt>dice:hasInformation</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:Information</tt></td><td><tt>dice:isInformationIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr> 
+    <tr><td><tt>dice:occursIn</tt></td><td><tt>dice:Activity</tt></td><td><tt>dice:Location</tt></td><td><tt>dice:hasEnvironment</tt></td><td><tt>-</tt></td></tr>  
+    <tr><td>Processes</td><td><tt>dicp:hasObject</tt></td><td><tt>dicp:ObjectActivity</tt></td><td><tt>BFO's
+      'entity'</tt></td><td><tt>dicp:isObjectIn</tt></td><td><tt>dice:hasParticipant</tt></td></tr>
+    </tbody>
+  </table>
+
+<p>
+The object of an activity (using <tt>dicp:hasObject</tt> property) can be, in addition to
+<tt>dice:BuildingObject</tt> also anything else that can be a focus of work, such as <tt>dice:Location</tt>, <tt>dice:Group</tt> (e.g., for
+procurement and logistic activities), <tt>dice:Activity</tt> (e.g., for
+managerial activities), or <tt>dice:InformationContentEntity</tt> (e.g., for design and planning activities). 
+</p>
+
+<p>
+It should be noted that these properties as such allow only a partial representation of the relations of activities and flows. They tell
+what entities are the ingredients of an activity but do not specify what should be the state of an entity before the execution of an
+activity (preconditions) or what would be the state after it (effects). The representation of these states require the concepts from the
+Variables ontologies described below. 
+</p>
+
+
+<h3>Multi-context data</h3>
+
+<p> Different aspects of construction - such as building objects, resources, or activities - can be represented in multiple different
+contexts and often it is interesting to compare the differences between those contexts. Building-related examples are as-designed and
+as-built contexts for BIM models, or more comprehensively the contexts for different LODs (levels of detail/development). Typical
+activity-related contexts are planned and actual data of project execution. </p>
+
+<p> Multi-context data is represented using the named graphs of RDF datasets. It is an orthogonal mechanism that allows any objects to be
+associated with different properties - or even different structures - in different contexts. If needed the multi-context mechanism allows
+the recording of all differences between planned and actual activities. In addition to the traditionally recorded planned and actual start
+and end times of activities, it is also possible represent actual activities that do not appear in the plans at all (so-called improvised
+activities).  </p>
+
+<center>
+<img width="50%" src="dico-contexts.png">
+</center>
+
+<h3>Variables and constraints</h3>
+
+<p>Much of the essential information in project management or construction management can be represented in the form of
+<em>constraints</em>, and over significant periods during project execution, the plans can have incomplete information about the exact
+values of some properties, such as start and end times of tasks, resources assigned to tasks, locations of entities, and so on. To enable
+the interoperable sharing of such crucial and common information, the ontologies include a possibility to associate a variable to any
+property of an object and to represent constraints between variables. This representation is completely orthogonal and can be used to enrich
+objects and properties defined in any existing ontologies.  </p>
+
+<p> In the example on the right the properties of an object (<tt>shipment1</tt>) as defined in the ontology are shown in blue color. Each of
+those properties is associated with a variable (in red color). The variables again are associated with constraints (in green color) that
+limit their possible values.  </p>
+
+<center>
+<img width="70%" src="dico-variables.png">
+</center>
+
+<h3>Integration with the broader Semantic Web</h3>
+
+<p>Digital Construction ontologies are designed to observe the Linked Data principles, and consequently to enable decentralized publication of
+construction data by the diverse parties in construction projects.  </p>
+
+<p>The ontologies use or are aligened with well-known existing ontologies, as shown in the figure on the right (import relations are shown
+as solid and reference relations dashed lines). The Basic Formal Ontology (BFO) is imported as the top-level ontology, the BIM models can be
+provided in ifcOWL or BOT, and concepts from other ontologies such as OWL-Time, PROV-O, FOAF, QUDT, SSN/SOSA, and Saref are used as needed.
+</p>
+
+<center>
+<img  width="45%" src="dico-ontology-relations.png">
+</center>     
+
+
+
+
+<h2>Contributing projects </h2>
+
+<table>
+  <tr>
+    <td><center><a href="https://www.bim4eeb-project.eu/"><img height="200" src="bim4eeb-logo3.png">
+      <p>BIM4EEB - BIM-based toolkit for efficient renovation of residential buildings</p></a>
+      <p>(European Union's H2020 research and innovation programme, grant N. 820660)</p></center></td>
+     <td><center><a href="https://www.aalto.fi/en/diction"><img height="200" src="diction-logo.png">
+       <p>Diction - Development of shared situational awareness in construction projects</p></a>
+       <p>(Business Finland, Collaborative research project 2018-2020)</center></td>
+  </tr>
+</table>
+<hr>
+
+<h2>Contributing organizations </h2>
+<ul>
+  <li><a href="https://www.aalto.fi/en">Aalto
+  University</a>, FI</li>
+  <li><a href="https://www.ri.se/en/">RI.SE</a>, SE</li>
+  <li><a href="https://www.suite5.eu/">SUITE5</a>, GR</li>
+  <li><a href="https://tu-dresden.de/">TU Dresden</a>, DE</li>
+  <li><a href="https://www.ucc.ie/">University College Cork</a>, IE</li>
+  <li><a href="https://visualynk.com/#/">VisuaLynk</a>, FI</li>
+  <li><a href="https://www.vttresearch.com/">VTT</a>, FI</li>
+</ul>
+<hr>
+
+<h2>Contacts</h2>
+<ul>
+  <li><a href="mailto:seppo.torma@visualynk.com">Seppo Törmä</a></li>
+  <li><a href="mailto:yuan.zheng@aalto.fi">Yuan Zheng</a></li>
+</ul>
+<hr>
+
+<h2>License</h2>
+<dd>
+    <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-Creative%20Commons%20Attribution%204.0%20International%20License-blue.svg" alt="http://creativecommons.org/licenses/by/4.0/" />
+    </a>
+    <a href="http://creativecommons.org/licenses/by/4.0/" rel="license" target="_blank">
+        <img src="https://i.creativecommons.org/l/by/4.0/88x31.png" style="border-width:0" alt="License" />
+    </a>
+</dd>
+    
+<hr>
+<address></address>
+<!-- hhmts start -->Last modified: Mon Apr 19 13:05:03 EEST 2021 <!-- hhmts end -->
+</body> </html>
