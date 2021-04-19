@@ -17,13 +17,17 @@ table {
   padding-left: 0px;
   text-align: left;  
 }
-div.head table.plain { margin-left: 0em; }
+div.head table.plain { margin-left: 1em; }
 table, th, td {
   border: 1px solid black;
 text-align: left;
+}
+
+td {
 font-size: small;
 }
-th { background: rgba(150, 150, 150, 0.3) }
+
+th { background: rgba(100, 150, 210, 0.3) }
 td.narrow {
   font-size: small;
   font-stretch: ultra-condensed;
@@ -77,10 +81,16 @@ body {
 
 <h2>Terminology for the representation of digitalized construction and renovation processes</h2>
 
-<p> Digital Construction Ontologies (DiCon) act as an enabler of <em>semantic interoperability between systems
-in the construction and renovation domain</em>. They define the basic terms related to built assets, building design, construction
-project planning, and construction planning, including the agents, resources and spatio-temporal aspects. The definitions of the ontologies rely heavily
-on standardized or otherwise established ontologies; the correspondances of Digital Construction Ontologies with other
+<p> Digital Construction Ontologies (DiCon) act as an enabler of <em>semantic interoperability between systems in the
+construction and renovation domain</em>. They define the basic terms related to built assets, building design,
+construction project planning, and construction planning, including the agents, resources and spatio-temporal
+aspects. The definitions rely heavily on standards (<a
+href="https://www.iso.org/standard/68078.html">ISO 19650 BIM/IM</a>, <a
+href="https://www.iso.org/standard/70303.html">ISO 16739-1 IFC</a>, <a
+href="https://www.iso.org/standard/74572.html">ISO ISO/IEC 21838-2 BFO</a> and <a
+href="https://www.iso.org/standard/74389.html">ISO 21597-1 ICDD</a>) and on established ontologies (such as <a
+href="https://www.w3.org/TR/owl-time/">OWL-Time</a>, <a href="https://www.w3.org/TR/prov-o/">PROV-O</a> and <a
+href="https://www.w3.org/TR/vocab-ssn/">SSN/SOSA</a>). The correspondances of Digital Construction Ontologies with other
 ontologies are provided explicitly in separate alignment modules. </p>
 
 <p> The specific objective is to cover also the representation of <em>digitalized construction processes</em>. Digital technologies
@@ -88,7 +98,7 @@ are increasingly used in all stages of construction lifecycle, from scanning, bu
 procurement to supply-chain management and construction management. Mobile devices, sensors and imaging solutions
 provide a flood of instantaneous data from the project execution. The variety, volume, and velocity of digital
 information are growing, which calls for automatization of information sharing between tasks and systems. Digital
-Construction Ontologies can provide a common terminology needed for automatization of information flows. </p>
+Construction Ontologies are designed to provide a common terminology needed in machine-to-machine information flows. </p>
 
 <p>
 Digitalized construction projects can employ a wide
@@ -96,15 +106,15 @@ range of task-specific point solutions that can significantly enhance the produc
 tasks. However, the improvement of overall construction productivity depends crucially on what happens <em>between the
 tasks</em>: how the information produced in one task can be utilized in other tasks. By improving the semantic
 interoperaability, the Digital Construction Ontologies are an enabler of smoother information sharing and eventually
-higher productivity and quality. </p>
+higher productivity and quality of construction and renovation projects. </p>
 
 <h2>Overview of ontology modules and alignments</h2>
 
 <p> Digital Construction Ontologies are modularised based on the <a
 href="https://www.w3.org/TR/vocab-ssn/#Modularization">vertical and horizontal segmentation approach of
-SSN/SOSA</a>. The vertical segmentation modules deepen the domain of the underlying ontology with additional semantic
-enrichment (including alignments with other ontologies), while the
-horizontal segmentation broaden the domain of the ontology with nearby concepts to cover a wider variety of use scenarios. </p>
+SSN/SOSA</a>. Vertical modules deepen the domain of the underlying ontology with additional semantic
+enrichment (including alignments with other ontologies), while horizontal modules broaden the domain of the
+ontology with nearby concepts to cover a wider variety of use scenarios. </p>
 
 <img width="70%" src="dicon-architecture.png">
 
@@ -112,13 +122,13 @@ horizontal segmentation broaden the domain of the ontology with nearby concepts 
 
 <table class="plain">
   <thead>
-    <tr><th><b>Module</b></th>
-    <th colspan="2"><b>Ontology namespace</b></th>
-    <th><b>Prefix</b></th>
-    <th><b>Description</b></th></tr>
+    <tr><th height="30"></th>
+    <th colspan="2" height="30"><b>Ontology namespace</b></th>
+    <th height="30"><b>Prefix</b></th>
+    <th height="30"><b>Description</b></th></tr>
     </thead>
   <tbody>
-    <tr><th colspan="5"><b>Ontologies</b></th></tr>
+    <tr><th colspan="5" height="25"><b>Ontologies</b></th></tr>
     
     <tr><td><a href="https://w3id.org/digitalconstruction/0.5/Contexts">Contexts</a></td>
     <td colspan="2"><tt>https://w3id.org/digitalconstruction/0.5/Contexts#</tt></td>
@@ -182,7 +192,7 @@ horizontal segmentation broaden the domain of the ontology with nearby concepts 
     <td><tt>dices:</tt></td>
     <td>Energy efficiency including energy systems</td></tr>
 
-    <tr><th colspan="5"><b>Vocabularies</b></th></tr>
+    <tr><th colspan="5" height="25"><b>Vocabularies</b></th></tr>
     
     <tr><td><a href="https://w3id.org/digitalconstruction/0.5/Units">Units</a></td>
     <td colspan="2"><tt>https://w3id.org/digitalconstruction/0.5/Units#</tt></td>
@@ -190,7 +200,7 @@ horizontal segmentation broaden the domain of the ontology with nearby concepts 
     <td>Units and quantity kinds that are specific to construction and
       renovation domain. </td></tr>
 
-    <tr><th colspan="5"><b>Alignments</b></th></tr>
+    <tr><th colspan="5" height="25"><b>Alignments</b></th></tr>
     
     <tr><td><a href="https://w3id.org/digitalconstruction/0.5/Alignment/BFO/bfo.ttl">Alignment/BFO</a></td>
     <td><a href="https://standards.iso.org/iso-iec/21838/-2/ed-1/en/owl/bfo-iso.owl">BFO</a></td>
@@ -280,33 +290,33 @@ horizontal segmentation broaden the domain of the ontology with nearby concepts 
        <p>Diction - Development of shared situational awareness in construction projects</p></a>
        <p>(Business Finland, Collaborative research project 2018-2020)</center></td>
      </tr>
-     <tr><th colspan="2"><b>Contributing organizations</b></th></tr>
+     <tr><th colspan="2" height="25"><b>Contributing organizations</b></th></tr>
      <tr><td>
        <table class="plain">
-	 <tr><td><a href="https://tu-dresden.de/">TU Dresden</a></td><td>DE</td></tr>
-	 <tr><td><a href="https://www.polimi.it/en/">Politecnico Milano</a></td><td>IT</td></tr>
-	 <tr><td><a href="https://www.suite5.eu/">SUITE5</a></td><td>GR</td></tr>
-	 <tr><td><a href="https://www.oneteam.it/">OneTeam</a></td><td>IT</td></tr>
-	 <tr><td><a href="https://www.ri.se/en/">RI.SE</a></td><td>SE</td></tr>
-	 <tr><td><a href="https://www.ucc.ie/">University College Cork</a></td><td>IE</td></tr>
-	 <tr><td><a href="https://visualynk.com/">VisuaLynk</a></td><td>FI</td></tr>
-	 <tr><td><a href="https://www.vttresearch.com/">VTT</a></td><td>FI</td></tr>
+	 <tr class="plain"><td class="plain"><a href="https://tu-dresden.de/">TU Dresden</a></td><td class="plain">DE</td></tr>
+	 <tr class="plain"><td class="plain"><a href="https://www.polimi.it/en/">Politecnico Milano</a></td><td class="plain">IT</td></tr>
+	 <tr class="plain"><td class="plain"><a href="https://www.suite5.eu/">SUITE5</a></td><td class="plain">GR</td></tr>
+	 <tr class="plain"><td class="plain"><a href="https://www.oneteam.it/">OneTeam</a></td><td class="plain">IT</td></tr>
+	 <tr class="plain"><td class="plain"><a href="https://www.ri.se/en/">RI.SE</a></td><td class="plain">SE</td></tr>
+	 <tr class="plain"><td class="plain"><a href="https://www.ucc.ie/">University College Cork</a></td><td class="plain">IE</td></tr>
+	 <tr class="plain"><td class="plain"><a href="https://visualynk.com/">VisuaLynk</a></td><td class="plain">FI</td></tr>
+	 <tr class="plain"><td class="plain"><a href="https://www.vttresearch.com/">VTT</a></td><td class="plain">FI</td></tr>
        </table>
      </td>
      <td>
        <table class="plain">
-	 <tr><td><a href="https://www.aalto.fi/en">Aalto University</a></td><td>FI</td></tr>
-	 <tr><td><a href="https://www.vttresearch.com/en">VTT</a></td><td>FI</td></tr>
-	 <tr><td><a href="https://construction.trimble.com/en/">Trimble</a></td><td>FI</td></tr>
-	 <tr><td><a href="https://www.fira.fi/en/">Fira</a></td><td>FI</td></tr>
-	 <tr><td><a href="https://www.sweco.fi/en/">Sweco</a></td><td>FI</td></tr>
-	 <tr><td><a href="https://parma.fi/">Parma</a></td><td>FI</td></tr>
-	 <tr><td><a href="https://bonava.fi/">Bonava</a></td><td>FI</td></tr>
-	 <tr><td><a href="https://www.ruukki.com/">Ruukki</a></td><td>FI</td></tr>
+	 <tr class="plain"><td class="plain"><a href="https://www.aalto.fi/en">Aalto University</a></td><td class="plain">FI</td></tr>
+	 <tr class="plain"><td class="plain"><a href="https://www.vttresearch.com/en">VTT</a></td><td class="plain">FI</td></tr>
+	 <tr class="plain"><td class="plain"><a href="https://construction.trimble.com/en/">Trimble</a></td><td class="plain">FI</td></tr>
+	 <tr class="plain"><td class="plain"><a href="https://www.fira.fi/en/">Fira</a></td><td class="plain">FI</td></tr>
+	 <tr class="plain"><td class="plain"><a href="https://www.sweco.fi/en/">Sweco</a></td><td class="plain">FI</td></tr>
+	 <tr class="plain"><td class="plain"><a href="https://parma.fi/">Parma</a></td><td class="plain">FI</td></tr>
+	 <tr class="plain"><td class="plain"><a href="https://bonava.fi/">Bonava</a></td><td class="plain">FI</td></tr>
+	 <tr class="plain"><td class="plain"><a href="https://www.ruukki.com/">Ruukki</a></td><td class="plain">FI</td></tr>
        </table>
      </td>
    </tr>
-   <tr><th colspan="2"><b>Contacts</b></th></tr>
+   <tr><th colspan="2" height="25"><b>Contacts</b></th></tr>
    <tr>
      <td><a href="mailto:seppo.torma@visualynk.com">Seppo Törmä</a> (<a href="https://visualynk.com/">VisuaLynk</a>)</td>
      <td><a href="mailto:yuan.zheng@aalto.fi">Yuan Zheng (<a href="https://www.aalto.fi/en">Aalto University</a>)</a></td>
@@ -315,8 +325,8 @@ horizontal segmentation broaden the domain of the ontology with nearby concepts 
 
 <h2>License</h2>
 <dd>
-    <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-Creative%20Commons%20Attribution%204.0%20International%20License-blue.svg" alt="http://creativecommons.org/licenses/by/4.0/" />
-    </a>
+    <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><img width="30%" src="https://img.shields.io/badge/License-Creative%20Commons%20Attribution%204.0%20International%20License-blue.svg" alt="http://creativecommons.org/licenses/by/4.0/" />
+    </a>&nbsp; &nbsp; &nbsp; &nbsp;
     <a href="http://creativecommons.org/licenses/by/4.0/" rel="license" target="_blank">
         <img src="https://i.creativecommons.org/l/by/4.0/88x31.png" style="border-width:0" alt="License" />
     </a>
@@ -324,5 +334,5 @@ horizontal segmentation broaden the domain of the ontology with nearby concepts 
     
 <hr>
 <address></address>
-<!-- hhmts start -->Last modified: Mon Apr 19 14:10:57 EEST 2021 <!-- hhmts end -->
+<!-- hhmts start -->Last modified: Mon Apr 19 15:13:06 EEST 2021 <!-- hhmts end -->
 </body> </html>
