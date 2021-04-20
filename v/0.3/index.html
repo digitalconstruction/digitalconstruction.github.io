@@ -33,7 +33,7 @@ body {
 }
 </style>
 
-<title>DICO - Digital Construction Ontologies</title>
+<title>Digital Construction Ontologies</title>
 </head>
 
 <body>
@@ -41,7 +41,7 @@ body {
 <div class="head">
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
 
-<h1>DICO - Digital Construction Ontologies</h1>
+<h1>Digital Construction Ontologies</h1>
 
 <table class="plain">
   <tr class="plain">
@@ -50,6 +50,14 @@ body {
     </td>
     <td class="plain">
       <p>0.3 (BFO ISO compliant)</p>
+    </td>
+  </tr>
+  <tr class="plain">
+    <td class="plain">
+      <p><b>Next version</b></p>
+    </td>
+    <td class="plain">
+      <p><a href="https://w3id.org/digitalconstruction/0.5/">0.5</a></p>
     </td>
   </tr>
   <tr class="plain">
@@ -84,11 +92,11 @@ ultimate integration of information from different decentralized sources over co
 
 <table>
   <tr><td>
-    <b>Note</b>: The DICO version 0.3 has been refactored to comply with the new version of BFO specified in the ISO/IEC
+    <b>Note</b>: The version 0.3 has been refactored to comply with the new version of BFO specified in the ISO/IEC
   21838-2 standard, finally approved in 2020-03. While most of the classes of BFO have remained same as in its previous version, there is a
-  large number of new relationships. The DICO v0.3 attempts to utilize those relationships as well as possible which has
+  large number of new relationships. Version 0.3 attempts to utilize those relationships as well as possible which has
   resulted in a number of changes especially concerning composite entities and activity-flow relations. Also, to make
-  DICO easier to use by applications, a uniform naming
+  Digital Construction Ontologies easier to use by applications, a uniform naming
   of instantiated classes and related properties was provided by defining equivalent terms for many BFO terms. 
   </td></tr>
 </table>
@@ -244,15 +252,15 @@ external ontologies (such as BIM models represented in ifcOWL or provenance repr
 to by people or systems during the management and execution of construction or renovation projects. This includes physical and spatial
 entities, temporal regions, information contents, agents, activities, and groupings of objects. </p>
 
-<p> The overall scope of DICO ontologies is shown in the figure below. Most concepts in the figure are from the Entities ontology. The large
-grey boxes show the areas that specific ontology modules in the DICO suite extend with more specific concepts.  The concepts shown in the
-light-blue boxes in the middle are those defined in DICO, the ones in light-grey boxes belong to BFO ISO and the green ones are from other
+<p> The overall scope of Digital Construction Ontologies is shown in the figure below. Most concepts in the figure are from the Entities ontology. The large
+grey boxes show the areas that specific ontology modules extend with more specific concepts.  The concepts shown in the
+light-blue boxes in the middle are those defined in Digital Construction Ontologies, the ones in light-grey boxes belong to BFO ISO and the green ones are from other
 ontologies. The direction of the arrow shows the superclass relation and a two-way arrow means equivalent classes. The texts near to concept
 boxes suggest possible subclasses.  </p>
 
 <img width="100%" src="dico-bfo.png">
 <p>
-The top-level organization of the DICO ontologies are provided by BFO. It divides the entities into two classes,
+The top-level organization of the Digital Construction Ontologies are provided by BFO. It divides the entities into two classes,
 <i>Occurrent</i> (things taking place in time, such as processes) and <i>Continuant</i> (things taking place in space, such as
 physical entities or spacial regions). From the perspective of construction management, <i>Activity</i> - a subclass of
 <i>Process</i> - captures the intentional efforts of an <i>Agent</i>. An <i>Agent</i> can be a <i>Person</i> or an
@@ -268,7 +276,7 @@ phase of their lifecycle, and that give identifiers, classifications or other la
 labelings is highly context dependent. To promote linking and integration between systems in construction projects, the flexible capability
 to represent the labelings of entities is crucially important.  </p>
 
-<p> In DICO, any <i>Entity</i> can be associated with a number of <i>Identifiers</i> and <i>Categories</i>. They can be <i>identifiedBy</i>
+<p> In Digital Construction Ontologies, any <i>Entity</i> can be associated with a number of <i>Identifiers</i> and <i>Categories</i>. They can be <i>identifiedBy</i>
 have Globally Unique Identifiers (GUID), and often multiple of them, each given by a different stage or system during its
 lifecycle. Moreover, objects can also have multiple local identifiers, such as a room number in a building or a control point number in a
 building automation system or an identifier in another information system.  </p>
@@ -287,7 +295,7 @@ specific category.  </p>
 </center>
 <p>
 The <i>Labeling</i> can also be used to associate case-specific names for any entity, for instance, to be shown in the
-user interface of a system that stores its data in DICO compliant manner. For example, in a location breakdown structure
+user interface of a system that stores its data in Digital Construction Ontologies compliant manner. For example, in a location breakdown structure
 the locations can be associated with names that make sense for the people working in a particular stage of construction. 
 </p>
 
@@ -322,7 +330,7 @@ execution data from the observations about the linked objects.  </p>
 </center>
 
 <p>
-The figure above presents the relations in DICO ontologies to represent the flows of activities, defined in the DICO Entities and Processes ontologies. The table below gives a detailed description of
+The figure above presents the relations in Digital Construction Ontologies to represent the flows of activities, defined in the Entities and Processes ontologies. The table below gives a detailed description of
 the flow relations. (Note that <tt>dice:hasParticipant</tt> is equivalent to BFO's <tt>'has participant'</tt>, and <tt>dice:occursIn</tt> BFO's <tt>'occurs in'</tt>).
 </p>
 
@@ -454,5 +462,5 @@ provided in ifcOWL or BOT, and concepts from other ontologies such as OWL-Time, 
     
 <hr>
 <address></address>
-<!-- hhmts start -->Last modified: Fri Sep  4 23:48:33 EEST 2020 <!-- hhmts end -->
+<!-- hhmts start -->Last modified: Tue Apr 20 08:24:33 EEST 2021 <!-- hhmts end -->
 </body> </html>
