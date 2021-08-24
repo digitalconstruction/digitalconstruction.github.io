@@ -85,7 +85,7 @@ body {
 
 <h2>Terminology for the representation of digitalized construction and renovation processes</h2>
 
-<p> Digital Construction Ontologies (DiCon) act as an enabler of <em>semantic interoperability between systems in the
+<p> Digital Construction Ontologies (DiCon) act as an enabler for the <em>semantic interoperability between systems in the
 construction and renovation domain</em>. They define the basic terms related to built assets, building design,
 construction project planning, and construction planning, including the agents, resources and spatio-temporal
 aspects. The definitions rely heavily on standards (<a
@@ -97,38 +97,50 @@ href="https://www.w3.org/TR/owl-time/">OWL-Time</a>, <a href="https://www.w3.org
 href="https://www.w3.org/TR/vocab-ssn/">SSN/SOSA</a>). The correspondances of Digital Construction Ontologies with other
 ontologies are provided explicitly in separate alignment modules. </p>
 
-<p> The specific objective is to cover also the representation of <em>digitalized construction processes</em>. Digital technologies
-are increasingly used in all stages of construction lifecycle, from scanning, building information modeling and
-procurement to supply-chain management and construction management. Mobile devices, sensors and imaging solutions
+<p> The specific objective is to extend the representation to cover <em>digitalized construction processes</em>. Digital
+technologies are increasingly used in all stages of construction lifecycle, from scanning, building information modeling
+and procurement to supply-chain management and construction management. Mobile devices, sensors and imaging solutions
 provide a flood of instantaneous data from the project execution. The variety, volume, and velocity of digital
-information are growing, which calls for automatization of information sharing between tasks and systems. Digital
-Construction Ontologies are designed to provide a common terminology needed in machine-to-machine information flows. </p>
+information are growing, which calls for automatization of information sharing between tasks and systems, since manual
+processing steps are becoming increasingly restrictive bottlenecks. Digital Construction Ontologies are designed to
+provide a common terminology needed for machine-to-machine information flows. </p>
 
 <p>
 Digitalized construction projects can employ a wide
 range of task-specific point solutions that can significantly enhance the productivity and quality of individual
 tasks. However, the improvement of overall construction productivity depends crucially on what happens <em>between the
-tasks</em>: how the information produced in one task can be utilized in other tasks. By improving the semantic
-interoperaability, the Digital Construction Ontologies are an enabler of smoother information sharing and eventually
+tasks</em>: how the information produced in one task is utilized in other tasks. By improving the semantic
+interoperability, the Digital Construction Ontologies are an enabler for smoother information sharing and eventually
 higher productivity and quality of construction and renovation projects. </p>
 
 <h2>Overview of ontology modules and alignments</h2>
 
-<p> Digital Construction Ontologies are modularised based on the <a
-href="https://www.w3.org/TR/vocab-ssn/#Modularization">vertical and horizontal segmentation approach of
-SSN/SOSA</a>. Vertical modules deepen the domain of the underlying ontology with additional semantic
-enrichment (including alignments with other ontologies), while horizontal modules broaden the domain of the
-ontology with nearby concepts to cover a wider variety of use scenarios. </p>
+<p> DiCon is modularized using the <a href="https://www.w3.org/TR/vocab-ssn/#Modularization">vertical and horizontal
+segmentation</a> approach of the <a href="https://www.w3.org/TR/vocab-ssn">Semantic Sensor Network Ontology</a>.  In the
+<em>vertical dimension</em>, a new module imports the previous one and deepens the representation of the underlying
+domain by defining additional subclasses, properties, restrictions, or alignments (therefore, alignment is always
+vertical segmentation). In the <em>horizontal dimension</em>, a new module broadens the domain by defining classes
+complementary to the previous ontology as well as properties to
+connect them to the previous concepts. </p>
+
+<p>In the vertical
+dimension, the new module should support selected use cases better, having perhaps a narrower user base when compared to
+the previous module, while horizontal segmentation should extend the set of supported use cases, therefore broadening
+the potential user base. </p>
+
+<p>In the diagram below, the blue rectangles represent the modules of DiCon (the light-blue ones are vocabularies),
+green boxes are alignment modules, and the grey boxes at top are external ontologies. The vertical import relations are
+shown with blue arrows are horizontal import with red arrows. The direction of an arrow is always from
+the importing module to the imported module (the <tt>owl:imports</tt> is in the module at the base of the arrow). </p>
 
 <img width="80%" src="dicon-architecture.png">
 
 <h2>Ontology modules at https://w3id.org/digitalconstruction/0.5/</h2>
 
-<p>
-Digital Construction Ontologies contain three kinds of modules: (1) <em>ontologies</em> contain <em>class and property
-definitions</em>, (2) <em>vocabularies</em> contain <em>instance definitions</em> based on the classes defined in the ontologies, and
-(3) <em>alignment modules</em> contain <em>alignment axioms</em> that connect terms of Digital Construction Ontologies to
-external ontologies. All references to external ontologies are in the alignment modules. 
+<p> Digital Construction Ontologies contain three kinds of modules: (1) <em>ontologies</em> contain <em>class and
+property definitions</em>, (2) <em>vocabularies</em> define <em>individuals</em> based on the classes defined in the
+ontologies, and (3) <em>alignment modules</em> contain <em>alignment axioms</em> that connect terms of Digital
+Construction Ontologies to external ontologies. All references to external ontologies are in the alignment modules.
 </p>
 
 <table class="plain">
@@ -332,18 +344,80 @@ external ontologies. All references to external ontologies are in the alignment 
   </tbody>
 </table>
 
+<h2>Main characteristics</h2>
+<ul>
+  <li><p><b>Support for relevant standards in the AEC domain</b> -
+  
+ Firstly, DiCon ontologies are aligned with <a
+    href="https://technical.buildingsmart.org/standards/ifc/ifc-formats/ifcowl/">ifcOWL</a> (the ontology version of the
+    <a href="https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/">Industry Foundation
+    Classes</a> - standardized as <a href="https://www.iso.org/standard/70303.html">ISO 16739</a>) which means that the
+    other relevant information - for instance, about stakeholders, activities, information entities, or sensor
+    observations - can be associated with building objects and spacial entities directly exported from BIM
+    tools. Secondly, DiCon provides a formalization of the central concepts of <a
+    href="https://www.iso.org/standard/68078.html">ISO 19650</a> that specifies the principles of information
+    management in BIM-based projects. The definitions range from built assets, appointments and project teams to
+    information models consisting of a federation of information containers. Thirdly, the information-related concepts
+    of DiCon are compatible with the <a href="https://standards.iso.org/iso/21597/-1/ed-1/en/">Container ontology</a> of
+    <a href="https://www.iso.org/standard/74389.html">ISO 21597 Information Container for Linked Document Delivery</a>
+    that enables the exchange of packages of interlinked datasets across parties.</p> </li>
+
+<li><p><b>Fundamental categories based on a top-level ontology</b> - 
+  
+Since DiCon covers a wide range of concepts – physical entities, spatial entities, information entities, events,
+processes, properties, roles, capabilities, etc. – there is a need for generalized concepts or higher-level categories
+as one method to interrelate different domains of information. Instead of ad hoc generalizations, a standard and
+widely-used top-level ontology <a href="https://basic-formal-ontology.org/">Basic Formal Ontology</a> (<a
+href="https://www.iso.org/standard/74572.html">ISO/IEC 21838</a>) is used as the source of fundamental categories. The
+secondary aim is to advance compatibility with major ontology efforts aligned with BFO such as <a
+href="https://www.industrialontologies.org/">Industrial Ontologies</a>, <a href="https://emmc.info/emmo-info/">European
+Materials Modeling Ontology</a>, and <a href="https://openenergy-platform.org/ontology/oeo">Open Energy Ontology</a>.
+BFO is based on ontological realism - according to which ontology represents entities in the world - that better promotes
+interoperability than ontologies that allow cultural or mental concepts with more diverse interpretations.
+The key areas where DiCon differs from BFO are the representations for artifacts and properties.</p></li>
+
+<li><p><b>Support for the evolution of information</b> - 
+
+Information will be accumulated, refined, and changed during the execution of construction and renovation
+projects. DiCon supports the evolution of information with two different mechanisms. Firstly, <em>objectification of
+properties</em> – aligned with SOSA/SSN, Saref Core, QUDT and the RDF reification terminology – is used for the
+small-scale evolution, e.g., for values changing over time as a result of sensor observations. Objectification also
+enables the representation of other metadata about properties: quantity kinds, units of measure, and property definition
+entities. Secondly, the large-scale evolution is based on the <em>named graphs</em> of an <a
+href="https://www.w3.org/TR/rdf11-concepts/#section-dataset">RDF Dataset</a> that are used to implement the ISO 19650
+information containers. This enables the storage and management of alternative renovation scenarios, different LOD
+levels of BIM models, versions of operational plans, entity organizations such as breakdown structures, and so on.
+</p></li>
+
+<li><p><b>Multiple identifiers and classifications</b> - 
+
+All DiCon entities can be labeled with identifiers and classifications (inspired by the <a
+href="https://www.semanticarts.com/gist/">gist ontology</a>). According to the Linked Data principles, every independent
+entity has a URI as its main and retrievable identifier. However, an entity can have additional identifiers in different
+information systems and other scopes. Identifiers can be globally unambiguous such as a GUID, or locally unambiquous,
+such as a room number in a building (where the building defines the scope of the identifier).  Likewise, since different
+classification systems in the construction sector are used in different geographical regions and organizations, DiCon
+supports the flexible labeling of entities with categories based on the needs of a project. Classifications are
+complementary to ontologies in the sense that they are capture the <em>variety</em> in the domain with an extensive set
+of detailed classes (possibly with class-specific attributes), while ontologies allow to represent the
+<em>complexity</em> in it with a compact set of classes, each with a distinct set of relations to other
+classes.</p></li>
+
+</ul>
+
+
 <h2>Overview of the classes</h2>
 <p>
 The following diagram illustrates the scope of Digital Construction
 Ontologies by showing the most important entity classes and their
 subclass relations. The various
-property classes are not included in the figure. The figure is drawn
+property classes are not included in the figure. The diagram is drawn
 in the <a href="https://chowlk.linkeddata.es/chowlk_spec">Chowlk notation</a>. 
 </p>
 <img src="entities-overview.svg" width="80%">
 
 
-<h2>Documentation</h2>
+<h2>Documentation and examples</h2>
 <ol>
   <li><p>The principles of Digital Construction Ontologies</p>
   <ol>
@@ -424,5 +498,5 @@ in the <a href="https://chowlk.linkeddata.es/chowlk_spec">Chowlk notation</a>.
     
 <hr>
 <address></address>
-<!-- hhmts start -->Last modified: Wed May 19 13:45:41 EEST 2021 <!-- hhmts end -->
+<!-- hhmts start -->Last modified: Tue Aug 24 15:59:56 EEST 2021 <!-- hhmts end -->
 </body> </html>
