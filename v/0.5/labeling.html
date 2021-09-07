@@ -1,0 +1,213 @@
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen" />
+<link rel="stylesheet" href="resources/rec.css" media="screen" />
+<link rel="stylesheet" href="resources/extra.css" media="screen" />
+<link rel="stylesheet" href="resources/owl.css" media="screen" />
+<style>
+table {
+  border-collapse: collapse;
+}
+.plain {
+  border: none;
+  background: none;
+  margin-left: 0em;
+  padding-left: 0px;
+  text-align: left;  
+}
+div.head table.plain { margin-left: 1em; }
+table, th, td {
+  border: 1px solid black;
+text-align: left;
+}
+
+th { background: rgba(100, 150, 210, 0.3) }
+td.narrow {
+  font-size: small;
+  font-stretch: ultra-condensed;
+}
+body {
+  background-image: url('dtf.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
+<title>Digital Construction Ontologies (DiCon)</title>
+</head>
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+
+<h1>Labeling of entities in DiCon</h1>
+
+<p> In DiCon, all entities can be labeled with multiple different identifiers and classifications, following the
+philosophy of <a href="https://www.semanticarts.com/gist/">gist ontology</a>: the labels are represented as data,
+instead of defining large numbers of new data properties or classes for them. Flexible labeling is important capability
+since labels can communicate the users as well as external systems what the entity in question is and what kind of
+entity it is.  A simplified diagram of the most important classes and properties is shown below. </p>
+
+<center>
+<img src="labeling-simplified.svg" width="50%">
+</center>
+
+<h2>Identifiers</h2>
+
+<h3>URIs as primary identifiers</h3>
+
+<p> Each independent entity represented according to DiCon ontologies has a URI as its primary identifier (Please note that
+there can also be subordinate entities that are anonymous and represented as blank nodes at the RDF level). Apart from
+identifying the entity, the URI can be used to retrieve the description of the entity.  </p>
+
+<p>Each URI is unambiguous (refer to one real-world entity) but not necessarily unique (there can be different URIs that
+refer to the same real-world entity).  For example, <tt>http://company1.com/ElmStreet1</tt> and
+<tt>http://project1.com/Building1</tt> could be two URIs that refer to the same real-world building. Each of the URIs
+may return information </p>
+
+<pre>
+<code>
+http://company1.com/ElmStreet1 --&gt
+    http://company1.com/ElmStreet1 a dice:BuiltAsset ;
+                                   dica:hasOwner http://example.com/Owner1 ;
+                                   ... 
+
+http://project1.com/Building1  --&gt
+    http://project1.com/Building1  a dice:Building ;
+                                   dice:hasAgent http://company1.com/Contractors/Contractor1 ;
+                                   ...
+</code>
+</pre>
+
+<p>These URIs can be declared with <tt>owl:sameAs</tt> axiom as references to the same entity. In a RDF database with
+proper support for reasoning, the result is a merging of properties from the two sources: </p>
+
+<pre>
+<code>
+http://company1.com/ElmStreet1 owl:sameAs http://project1.com/Building1 .
+
+http://company1.com/ElmStreet1 --&gt
+    http://company1.com/ElmStreet1 a dice:BuiltAsset, dice:Building ;
+                                   dica:hasOwner http://example.com/Owner1 ;
+                                   dice:hasAgent http://company1.com/Contractors/Contractor1 ;
+                                   ... 
+</code>
+</pre>
+
+<p> The description above is meant to remind that in Linked Data systems URIs are the primary identifiers of
+entities. They can be made retrievable, they are required by the Linked Data Principles, and the reasoning works based on
+equivalence defined by them. However, they are not sufficient for all practical settings related to user interaction or
+cross-system access.  </p>
+
+<h3>Additional identifiers</h3>
+
+<p> Any real-world entity can have distinct identifiers in different systems and contexts. Often it is essential to know
+these identifiers to be able to refer to the entity in user interfaces, when accessing entities in those systems or
+using them in the specified contexts.  Some of the identifiers are globally unambiguous (such as GUID or DID) and some
+locally unambiguous. Examples of local identifiers are room numbers in a building, control point numbers in a building
+automation system, user names in a communication application, identifiers in a local database, and so on. Many of the
+commonly used identifier types are not URIs; in general, they can be any strings. </p>
+
+<p>In detail, any instance of the class <tt>dice:Entity</tt> (or some of its subclasses) can have additional identifiers
+of the class <tt>dice:Identifier</tt> connected to through the object property <tt>dice:isIdentifiedBy</tt>. 
+</p>
+
+<p>
+An example of a labeling is the following. The primary identifier of an entity is <tt>http://company1.com/ElmStreet1</tt>
+and it has an IFC GUID and an asset identifier as additional identifiers. The residental unit
+<tt>http://company1.com/ElmStreet1Apt1</tt> in the building has the apartment number as a local identifier in the scope
+of the building. It should be noted that the identifiers are always with respect to some scope that can be an
+identifier category or an entity which hosts other identified entities. 
+</p>
+
+<pre>
+<code>
+@prefix : &lthttp://company1.com/&gt .
+@prefix dice: &lthttps://w3id.org/digitalconstruction/0.5/Entities#&gt .
+
+:IfcGlobalId a dice:Category ;
+   rdfs:label "Ifc global identifier (GUID)" .
+
+
+:AssetId a dice:Category ;
+   rdfs:label "An asset identifier in the Asset Management System" .
+
+:ElmStreet1 a dice:BuiltAsset  ;
+            dica:hasOwner http://company1.com/Owner1 ;
+            dice:isIdentifiedBy [ a dice:Identifier ;
+                                  dice:hasLabel "21EC2020-3AEA-4069-A2DD-08002B30309D" ; 
+                                  dice:hasScope : IfcGlobalId ] ,
+                                [ a dice:Identifier ;
+                                  dice:hasLabel "987654" ; 
+                                  dice:hasScope :AssetId ] .
+
+:Elm1StreetApartments a dice:EntityScope ;
+            dice:hasEntitiesFrom :ElmStreet1 .
+
+:ElmStreet1Apt1 a dice:ResidentialUnit ;
+                dice:isBuildingUnitOf :ElmStreet1 ;
+                dice:isIdentifiedBy [ a dice:Identifier ;
+                                      dice:hasLabel "101" ; 
+                                      dice:hasScope :ElmStreet1Apartments ] , 
+                                    [ a dice:Identifier ;
+                                      dice:hasLabel "987654-1" ; 
+                                      dice:hasScope :AssetId ] .
+</code>
+</pre>
+
+<h2>Classifications</h2>
+
+<p> In ananalogous fashion to identifiers, classifications using <tt>dice:Category</tt> can be associated to entities
+through the object property <tt>dice:isClassifiedBy</tt>.  There are many different classification or coding systems -
+OmniClass, ETIM, CoClass, Talo2000, or GS1 codes - that specify the types of entities. The following example shows the
+use of classification with product data: </p>
+
+<pre>
+<code>
+@prefix : &lthttp://company1.com/&gt .
+@prefix dice: &lthttps://w3id.org/digitalconstruction/0.5/Entities#&gt .
+
+:ETIM a dice:Category ;
+   rdfs:label "ETIM classification for technical products" .
+
+:BSDD a dice:Category ;
+   rdfs:label "bSDD classification" .
+
+:GTIN a dice:Category ;
+   rdfs:label "GS1 Trade Item Number for a class of trade items" .
+    
+:InternalProductId a dice:EntityScope ;
+   dice:hasEntitiesFrom :InternalProductDB ;
+   rdfs:label "Internal product database" .
+
+:Lamp1 a dice:BuildingObject ;
+   dice:isIdentifiedBy [a dice:Identifier ;
+         dice:hasScope :InternalProductID ;
+         dice:hasLabel "pr0233.98723878822" ]  ;
+   dice:isClassifiedBy [a dice:Category ;
+         dice:hasScope :ETIM ;
+         dice:hasLabel "EC000819" ] ,
+        [a dice:Category ;
+         dice:hasScope :BSDD ;
+         dice:hasLabel "1YlGK0inSHuO00025QrE$V" ] ,
+        [a dice:Category ;
+         dice:hasScope :GTIN  ;
+         dice:hasLabel "012345.67890" ].
+</code>
+</pre>
+
+<p>
+Different classification systems can contain thousands of detailed categories for different kinds of entities. The
+association of these categories to entities in a generic fasion enables to keep the DiCon ontologies simpler. The
+ontologies can focus on the complexity of the domain, while the classifications take care of the variety in it. 
+</p>
+   
+<hr>
+<address></address>
+<!-- hhmts start -->Last modified: Tue Sep  7 13:59:29 EEST 2021 <!-- hhmts end -->
+</body> </html>
