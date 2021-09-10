@@ -44,11 +44,18 @@ body {
 <div class="head">
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
 
-<h1>Built assets and agents</h1>
+<h1>Built assets, agents, and BIM models</h1>
 
-<p>When dealing with an existing building - that is, in the operational stage of the building lifecycle, concerning
-  asset management, property management, building maintenance, and renovations - it is essential to know what are the
-  relations of the built assets in question with the agents that own, lease, occupy, or use those assets.  </p>
+<p>When dealing with an existing building - generally in all activities in the operational stage of the building
+  lifecycle, ranging from asset management, property management, and building maintenance to renovation projects - it is
+  essential to know what are the relations of the built assets in question with the agents that own, lease, occupy, or
+use those assets.  </p>
+
+<p> Below the DiCon classes and properties to represent built assets and related agents is presented, as a class diagram
+and with a small example. Finally it is shown how a BIM model can be connected to the built assets. 
+</p>
+
+<h2>Classes and properties</h2>
 
 <p> DiCon representation of built assets (<a
 href="https://w3id.org/digitalconstruction/0.5/Entities#BuiltAsset"><tt>dice:BuiltAsset</tt></a>) covers those parts of
@@ -72,13 +79,16 @@ href="https://w3id.org/digitalconstruction/0.5/Agents#hasTenant"><tt>dica:hasTen
 href="https://w3id.org/digitalconstruction/0.5/Agents#hasLandlord"><tt>dica:hasLandlord</tt></a>), see <a
 href="https://w3id.org/digitalconstruction/0.5/Agents">DiCon Agents</a>.  </p>
 
-<center>
-<img src="builtasset-agents.svg" width="60%">
-</center>
+<img src="builtasset-agents.svg" width="50%">
 
+<h2>Example</h2>
 <p>
-Figure below shows an example of entities related to one residential unit, where the ownership structure is organized as
-condominium. 
+The code below shows an example of entities related to two residential units, where the ownership structure is organized
+as a condominium. There is a real estate (<tt>:RE1</tt>) with one building (<tt>:RE1-B1</tt>) that contains two
+apartments (<tt>:RE1-B1-Apt1</tt> and <tt>:RE1-B1-Apt2</tt>). The housing coop (<tt>:RE1-Housing-Coop</tt>) owns the
+real estate. There are two shareholders (<tt>:Owner1</tt> and <tt>:Owner2</tt>) who own the apartments. The first one
+has rented the apartment to a tenant (<tt>:Tenant1</tt>) who lives in the apartment with another occupant
+(<tt>:Occupant1</tt>) while the second owner lives alone in her apartment. 
 </p>
 
 <pre>
@@ -102,7 +112,7 @@ condominium.
 
 :RE1-HousingCoop a dica:Corporation ;
                  dica:isOwnerOf :RE1 ;
-		 dica:hasShareholder :Owner1 .
+		 dica:hasShareholder :Owner1, Owner2 .
 
 :Owner1 a dica:Person , dica:BuiltAssetOwner ;
         dica:isOwnerOf :RE1-B1-Apt1 ;
@@ -114,14 +124,62 @@ condominium.
 
 :Occupant1 a dica:Person, dica:Occupant ;
            dica:isOccupantIn :RE1-B1-Apt1 .
+
+:Owner2 a dica:Person , dica:BuiltAssetOwner ;
+        dica:isOwnerOf :RE1-B1-Apt1 ;
+	dica:isOccupantIn :RE1-B1-Apt2 .
 </code>
 </pre>
 
-<center>
-<img src="condominium.svg" width="60%">
-</center>
+<p>
+The figure below shows the relations of the first owner (<tt>:Owner1</tt>). 
+</p>
+
+<img src="condominium.svg" width="50%">
+
+<h2>Connecting a BIM model to the built assets</h2>
+
+<p>
+When a BIM model of the building is created, its relevant spatial structures (those of type <tt>ifcowl:IfcBuilding</tt>,
+<tt>ifcowl:IfcZone</tt>, or <tt>ifcowl:IfcSpace</tt>) can be connected to the built asset through the object property
+<a
+href="https://w3id.org/digitalconstruction/0.5/Entities#isLocationOf"><tt>dice:isLocationOf</tt></a>. 
+</p>
+
+<p>
+Once the IFC model is converted into RDF, the resulting ifcowl-based model can contain entities such as the following: 
+</p>
+<pre>
+<code>
+@prefix : &lthttp://company1.com/&gt .
+@prefix ifcowl: &lhttps://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL&gt .
+
+:GlobalId/0484c9eb-f608-4ddc-badf-719678accf22 a ifcowl:IfcBuilding ; ...
+
+:GlobalId/9ada6928-bcae-46fb-a808-5efbfdbed8b4 a ifcowl:IfcZone ; ...
+
+:GlobalId/0af672c4-7cb6-4b64-b3d2-141bff8899d5 a ifcowl:IfcZone ; ...
+</code>
+</pre>
+
+<p> To connect IFC entities to built assets, the corresponding entities from the IFC model and the asset model need to
+be identified, manually or automatically, as it may be, perhaps based on common identifying properties. After that the
+connextions can be with declarations such as the following: </p>
+
+<pre>
+<code>
+@prefix : &lthttp://company1.com/&gt .
+@prefix dice: &lthttps://w3id.org/digitalconstruction/0.5/Entities#&gt .
+
+:RE1-B1 dice:isLocationOf :GlobalId/0484c9eb-f608-4ddc-badf-719678accf22 .
+
+:RE1-B1-Apt1 dice:isLocationOf :GlobalId/9ada6928-bcae-46fb-a808-5efbfdbed8b4 .
+
+:RE1-B1-Apt2 dice:isLocationOf :GlobalId/0af672c4-7cb6-4b64-b3d2-141bff8899d5 .
+</code>
+</pre>
 
 <p> <hr>
 <address></address>
-<!-- hhmts start -->Last modified: Fri Sep 10 15:54:47 EEST 2021 <!-- hhmts end -->
+<!-- hhmts start -->Last modified: Fri Sep 10 17:36:07 EEST 2021 <!-- hhmts end -->
 </body> </html>
