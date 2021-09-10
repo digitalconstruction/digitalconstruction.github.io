@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen" />
+<link rel="stylesheet" href="resources/rec.css" media="screen" />
+<link rel="stylesheet" href="resources/extra.css" media="screen" />
+<link rel="stylesheet" href="resources/owl.css" media="screen" />
+<style>
+table {
+  border-collapse: collapse;
+}
+.plain {
+  border: none;
+  background: none;
+  margin-left: 0em;
+  padding-left: 0px;
+  text-align: left;  
+}
+div.head table.plain { margin-left: 1em; }
+table, th, td {
+  border: 1px solid black;
+text-align: left;
+}
+
+th { background: rgba(100, 150, 210, 0.3) }
+td.narrow {
+  font-size: small;
+  font-stretch: ultra-condensed;
+}
+body {
+  background-image: url('dtf.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
+<title>Digital Construction Ontologies (DiCon)</title>
+</head>
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+
+<h1>Built assets and agents</h1>
+
+<p>When dealing with an existing building - that is, in the operational stage of the building lifecycle, concerning
+  asset management, property management, building maintenance, and renovations - it is essential to know what are the
+  relations of the built assets in question with the agents that own, lease, occupy, or use those assets.  </p>
+
+<p> DiCon representation of built assets (<a
+href="https://w3id.org/digitalconstruction/0.5/Entities#BuiltAsset"><tt>dice:BuiltAsset</tt></a>) covers those parts of
+built environment that can be owned separately: real estates (<a
+href="https://w3id.org/digitalconstruction/0.5/Entities#RealEstate"><tt>dice:RealEstate</tt></a>), buildings (<a
+href="https://w3id.org/digitalconstruction/0.5/Entities#RealEstate"><tt>dice:Building</tt></a>), and building units (<a
+href="https://w3id.org/digitalconstruction/0.5/Entities#BuildingUnit"><tt>BuildingUnit</tt></a>), the last one further
+subdivided into residential units (<a
+href="https://w3id.org/digitalconstruction/0.5/Entities#ResidentialUnit"><tt>dice:ResidentialUnit</tt></a>) and
+non-residential units (<a
+href="https://w3id.org/digitalconstruction/0.5/Entities#NonResidentialUnit"><tt>dice:NonResidentialUnit</tt></a>), see
+<a href="https://w3id.org/digitalconstruction/0.5/Entities">DiCon Entities</a>. They are related to agents (<a
+href="https://w3id.org/digitalconstruction/0.5/Agents#Agent"><tt>dica:Agent</tt></a>) and legal persons (<a
+href="https://w3id.org/digitalconstruction/0.5/Agents#LegalPerson"><tt>dica:LegalPerson</tt></a>) that can own (<a
+href="https://w3id.org/digitalconstruction/0.5/Agents#isOwnerOf"><tt>dica:isOwnerOf</tt></a>), lease (<a
+href="https://w3id.org/digitalconstruction/0.5/Agents#hasLeaseOn"><tt>dica:hasLeaseOn</tt></a>), occupy (<a
+href="https://w3id.org/digitalconstruction/0.5/Agents#isOccupantIn"><tt>dica:isOccupantIn</tt></a>), or use (<a
+href="https://w3id.org/digitalconstruction/0.5/Agents#isBuiltAssetUserOf"><tt>dica:isBuiltAssetUserOf</tt></a>) built
+assets and be in consequent relationships with each other such as tenant (<a
+href="https://w3id.org/digitalconstruction/0.5/Agents#hasTenant"><tt>dica:hasTenant</tt></a>) or landlord (<a
+href="https://w3id.org/digitalconstruction/0.5/Agents#hasLandlord"><tt>dica:hasLandlord</tt></a>), see <a
+href="https://w3id.org/digitalconstruction/0.5/Agents">DiCon Agents</a>.  </p>
+
+<center>
+<img src="builtasset-agents.svg" width="60%">
+</center>
+
+<p>
+Figure below shows an example of entities related to one residential unit, where the ownership structure is organized as
+condominium. 
+</p>
+
+<pre>
+<code>
+@prefix : &lthttp://company1.com/&gt .
+@prefix dice: &lthttps://w3id.org/digitalconstruction/0.5/Entities#&gt .
+@prefix dica: &lthttps://w3id.org/digitalconstruction/0.5/Agents#&gt .
+
+# BUILT ASSETS
+
+:RE1 a dice:RealEstate ;
+     dice:hasBuilding :Re1-B1 .
+
+:BE1-B1 a dice:Building ;
+        dice:hasBuildingUnit :RE1-B1-Apt1, :RE1-B1-Apt2 .
+
+:RE1-B1-Apt1 a dice:ResidentialUnit .	
+:RE1-B1-Apt2 a dice:ResidentialUnit  .
+
+# AGENTS
+
+:RE1-HousingCoop a dica:Corporation ;
+                 dica:isOwnerOf :RE1 ;
+		 dica:hasShareholder :Owner1 .
+
+:Owner1 a dica:Person , dica:BuiltAssetOwner ;
+        dica:isOwnerOf :RE1-B1-Apt1 ;
+	dica:hasTenant :Tenant1 .
+
+:Tenant1 a dica:Person, dica:Tenant , dica:Occupant ;
+         dica:hasLeaseOn :RE1-B1-Apt1 ;
+	 dica:isOccupantIn :RE1-B1-Apt1 .
+
+:Occupant1 a dica:Person, dica:Occupant ;
+           dica:isOccupantIn :RE1-B1-Apt1 .
+</code>
+</pre>
+
+<center>
+<img src="condominium.svg" width="60%">
+</center>
+
+<p> <hr>
+<address></address>
+<!-- hhmts start -->Last modified: Fri Sep 10 15:54:47 EEST 2021 <!-- hhmts end -->
+</body> </html>
