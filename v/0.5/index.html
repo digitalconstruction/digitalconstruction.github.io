@@ -115,35 +115,39 @@ higher productivity and quality of construction and renovation projects. </p>
 
 <h2>Overview of ontology modules and alignments</h2>
 
+<p> Digital Construction Ontologies contain three kinds of modules: (1) <em>ontology modules</em> contain <em>class and
+property definitions</em>, (2) <em>vocabularies</em> define <em>individuals</em>, that is, instances of the classes
+defined in the ontologies, and (3) <em>alignment modules</em>, each of which imports both an DiCon ontology module and
+an external ontology, and specifies a set of <em>alignment axioms</em> to connect the terms of the imported ontologies
+with each other.</p>
+
+<p>The arrows in the figure below show the <tt>owl:import</tt> relations among the three kinds of
+modules. The direction of an arrow is always from the importing module to the imported module (that is, the
+<tt>owl:imports</tt> statement is in the module at the base of the arrow). In DiCon, the references to external ontologies are
+contained in the alignment modules, with the exception of referencies to external vocabularies that specify individuals
+(most notably the QUDT vocabularies). </p>
+
+<center>
+<img width="80%" src="dicon-architecture.svg">
+</center>
+
 <p> DiCon is modularized using the <a href="https://www.w3.org/TR/vocab-ssn/#Modularization">vertical and horizontal
 segmentation</a> approach of the <a href="https://www.w3.org/TR/vocab-ssn">Semantic Sensor Network Ontology</a>.  In the
 <em>vertical dimension</em>, a new module imports the previous one and deepens the representation of the underlying
-domain by defining additional subclasses, properties, restrictions, or alignments (therefore, alignment is always
+domain by defining additional subclasses, properties, restrictions, or alignments (therefore, an alignment is always means
 vertical segmentation). In the <em>horizontal dimension</em>, a new module broadens the domain by defining classes
-complementary to the previous ontology as well as properties to
-connect them to the previous concepts. </p>
+complementary to the previous ontology as well as properties to connect them to the previous concepts. </p>
 
-<p>In the vertical
-dimension, the new module should support selected use cases better, having perhaps a narrower user base when compared to
-the previous module, while horizontal segmentation should extend the set of supported use cases, therefore broadening
-the potential user base. </p>
-
-<p>In the diagram below, the blue rectangles represent the modules of DiCon (the light-blue ones are vocabularies),
-green boxes are alignment modules, and the grey boxes at top are external ontologies. The vertical import relations are
-shown with blue arrows are horizontal import with red arrows. The direction of an arrow is always from
-the importing module to the imported module (the <tt>owl:imports</tt> is in the module at the base of the arrow). </p>
-
-<img width="100%" src="dicon-architecture.svg">
+<p>In the vertical dimension, the new module should support selected use cases better, having perhaps a narrower user
+base when compared to the previous module, while horizontal segmentation should extend the set of supported use cases,
+therefore broadening the potential user base. In the diagram below, the blue rectangles represent the modules of DiCon
+(the light-blue ones are vocabularies), green boxes are alignment modules, and the white boxes at top are external
+ontologies.</p>
 
 <h2>Ontology modules at https://w3id.org/digitalconstruction/0.5/</h2>
 
-<p> Digital Construction Ontologies contain three kinds of modules: (1) <em>ontology modules</em> contain <em>class and
-property definitions</em>, (2) <em>vocabularies</em> define <em>individuals</em>, that is, instances of the classes
-defined in the ontologies, and (3) <em>alignment modules</em> import both DiCon ontologies and external ontologies and
-specify <em>alignment axioms</em> to connect them with each other. The arrows in the figure above show the
-<tt>owl:import</tt> relations among the three kinds of modules. The references to external ontologies are contained in
-the alignment modules, with the exception of referencies to external vocabularies that specify individuals (most notably
-the QUDT vocabularies). </p>
+<p>The table below lists all the ontology modules, vocabularies and alignment modules of Digital Construction
+Ontologies. </p>
 
 <table class="plain">
   <thead>
@@ -489,5 +493,5 @@ in the <a href="https://chowlk.linkeddata.es/chowlk_spec">Chowlk notation</a>.  
     
 <hr>
 <address></address>
-<!-- hhmts start -->Last modified: Tue Nov  9 13:24:43 EET 2021 <!-- hhmts end -->
+<!-- hhmts start -->Last modified: Tue Nov  9 13:48:27 EET 2021 <!-- hhmts end -->
 </body> </html>
