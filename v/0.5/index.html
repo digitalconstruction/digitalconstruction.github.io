@@ -97,13 +97,13 @@ href="https://www.w3.org/TR/owl-time/">OWL-Time</a>, <a href="https://www.w3.org
 href="https://www.w3.org/TR/vocab-ssn/">SSN/SOSA</a>). The correspondances of Digital Construction Ontologies with other
 ontologies are provided explicitly in separate alignment modules. </p>
 
-<p> The specific objective is to extend the representation to cover <em>digitalized construction processes</em>. Digital
-technologies are increasingly used in all stages of construction lifecycle, from scanning, building information modeling
-and procurement to supply-chain management and construction management. Mobile devices, sensors and imaging solutions
-provide a flood of instantaneous data from the project execution. The variety, volume, and velocity of digital
-information are growing, which calls for automatization of information sharing between tasks and systems, since manual
-processing steps are becoming increasingly restrictive bottlenecks. Digital Construction Ontologies are designed to
-provide a common terminology needed for machine-to-machine information flows. </p>
+<p> The objective of DiCon is specifically to support the representation of <em>digitalized construction
+processes</em>. Digital technologies are increasingly used in all stages of construction lifecycle, from scanning,
+building information modeling and procurement to supply-chain management and construction management. Mobile devices,
+sensors and imaging solutions provide a flood of instantaneous data from the project execution. The variety, volume, and
+velocity of digital information are growing, which calls for automatization of information sharing between tasks and
+systems, since manual processing steps are becoming increasingly restrictive bottlenecks. Digital Construction
+Ontologies are designed to provide a common terminology needed for machine-to-machine information flows. </p>
 
 <p>
 Digitalized construction projects can employ a wide
@@ -133,15 +133,17 @@ green boxes are alignment modules, and the grey boxes at top are external ontolo
 shown with blue arrows are horizontal import with red arrows. The direction of an arrow is always from
 the importing module to the imported module (the <tt>owl:imports</tt> is in the module at the base of the arrow). </p>
 
-<img width="80%" src="dicon-architecture.svg">
+<img width="100%" src="dicon-architecture.svg">
 
 <h2>Ontology modules at https://w3id.org/digitalconstruction/0.5/</h2>
 
-<p> Digital Construction Ontologies contain three kinds of modules: (1) <em>ontologies</em> contain <em>class and
-property definitions</em>, (2) <em>vocabularies</em> define <em>individuals</em> based on the classes defined in the
-ontologies, and (3) <em>alignment modules</em> contain <em>alignment axioms</em> that connect terms of Digital
-Construction Ontologies to external ontologies. All references to external ontologies are in the alignment modules.
-</p>
+<p> Digital Construction Ontologies contain three kinds of modules: (1) <em>ontology modules</em> contain <em>class and
+property definitions</em>, (2) <em>vocabularies</em> define <em>individuals</em>, that is, instances of the classes
+defined in the ontologies, and (3) <em>alignment modules</em> import both DiCon ontologies and external ontologies and
+specify <em>alignment axioms</em> to connect them with each other. The arrows in the figure above show the
+<tt>owl:import</tt> relations among the three kinds of modules. The references to external ontologies are contained in
+the alignment modules, with the exception of referencies to external vocabularies that specify individuals (most notably
+the QUDT vocabularies). </p>
 
 <table class="plain">
   <thead>
@@ -487,5 +489,5 @@ in the <a href="https://chowlk.linkeddata.es/chowlk_spec">Chowlk notation</a>.  
     
 <hr>
 <address></address>
-<!-- hhmts start -->Last modified: Tue Nov  9 13:12:52 EET 2021 <!-- hhmts end -->
+<!-- hhmts start -->Last modified: Tue Nov  9 13:24:43 EET 2021 <!-- hhmts end -->
 </body> </html>
