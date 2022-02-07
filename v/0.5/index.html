@@ -35,7 +35,7 @@ body {
   background-size: cover;
 }
 </style>
-
+<
 <title>Digital Construction Ontologies (DiCon)</title>
 </head>
 
@@ -116,16 +116,15 @@ higher productivity and quality of construction and renovation projects. </p>
 <h2>Overview of ontology modules and alignments</h2>
 
 <p> Digital Construction Ontologies contain three kinds of modules: (1) <em>ontology modules</em> contain <em>class and
-property definitions</em>, (2) <em>vocabularies</em> define <em>individuals</em>, that is, instances of the classes
-defined in the ontologies, and (3) <em>alignment modules</em>, each of which imports both an DiCon ontology module and
-an external ontology, and specifies a set of <em>alignment axioms</em> to connect the terms of the imported ontologies
-with each other.</p>
+property definitions</em>, (2) <em>vocabularies of individuals</em> consisting of instances of the classes defined in
+the ontologies, and (3) <em>alignment modules</em>, each of which imports both an DiCon ontology module and an external
+ontology, and specifies a set of <em>alignment axioms</em> to connect the terms of the imported ontologies with each
+other.</p>
 
 <p>The arrows in the figure below show the <tt>owl:import</tt> relations among the three kinds of
 modules. The direction of an arrow is always from the importing module to the imported module (that is, the
 <tt>owl:imports</tt> statement is in the module at the base of the arrow). In DiCon, the references to external ontologies are
-contained in the alignment modules, with the exception of referencies to external vocabularies that specify individuals
-(most notably the QUDT vocabularies). </p>
+contained in the alignment modules, with the exception of referencies to individuals specified in external vocabularies (most notably the QUDT vocabularies). </p>
 
 <center>
 <img width="85%" src="dicon-architecture.svg">
@@ -141,15 +140,14 @@ complementary to the previous ontology as well as properties to connect them to 
 <p>In the vertical dimension, the new module should support selected use cases better, having perhaps a narrower user
 base when compared to the previous module, while horizontal segmentation should extend the set of supported use cases,
 therefore broadening the potential user base. In the diagram below, the blue rectangles represent the modules of DiCon
-(the light-blue ones are vocabularies), green boxes are alignment modules, and the white boxes at top are external
-ontologies.</p>
+(the light-blue ones are vocabularies of individuals), green boxes are alignment modules, and the white boxes at top are
+external ontologies.</p>
 
 <h2>Ontology modules at https://w3id.org/digitalconstruction/0.5/</h2>
 
-<p>The table below lists all the DiCon ontology modules (for classes and properties), vocabularies (for individuals) and
-alignment modules (for mappings to external ontologies). The namespace and the suggested prefix for each ontology
-modules is provided. 
-</p>
+<p>The table below lists all the DiCon ontology modules (for classes and properties), vocabularies of individuals, and
+alignment modules for mappings to external ontologies. The namespace and the suggested prefix for each ontology modules
+is provided.  </p>
 
 <table class="plain">
   <thead>
@@ -225,7 +223,7 @@ modules is provided.
     <td><tt>dices:</tt></td>
     <td>Energy efficiency including energy systems</td></tr>
 
-    <tr><th colspan="5" height="25"><b>Vocabularies (individuals)</b></th></tr>
+    <tr><th colspan="5" height="25"><b>Vocabularies of individuals</b></th></tr>
     
     <tr><td><a href="https://w3id.org/digitalconstruction/0.5/Units">Units</a></td>
     <td colspan="2"><tt>https://w3id.org/digitalconstruction/0.5/Units#</tt></td>
@@ -495,5 +493,5 @@ in the <a href="https://chowlk.linkeddata.es/chowlk_spec">Chowlk notation</a>.  
     
 <hr>
 <address></address>
-<!-- hhmts start -->Last modified: Tue Nov  9 23:43:30 EET 2021 <!-- hhmts end -->
+<!-- hhmts start -->Last modified: Mon Feb  7 12:52:41 EET 2022 <!-- hhmts end -->
 </body> </html>
